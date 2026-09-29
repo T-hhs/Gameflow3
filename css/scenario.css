@@ -1,0 +1,57 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
+.teams .teamHeader {
+    margin-left: 5%;
+    
+    display: flex;
+}
+
+.teamHeader p {
+    margin-right: 25.5%;
+}
+
+.team {
+    width: 50%;
+    height: 50px;
+    margin: 5px;
+    margin-left: 5%;
+    border: 2px solid black;
+    border-radius: 5px;
+
+    display: flex;
+}
+
+.team p {
+    width: 50%;
+    margin-left: 2.5%;
+}
+
+.team select {
+    height: 80%;
+    width: 45%;
+    margin: 5px;
+    margin-left: 0%;
+    margin-right: 0%;
+
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.info article {
+    height: 500px;
+    width: 30%;
+
+    margin-right: 5%;
+    margin-top: 5%;
+
+    border: 2px solid black;
+    border-radius: 5px;
+
+    float: right;
+}
