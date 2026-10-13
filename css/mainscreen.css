@@ -1,0 +1,17 @@
+html {
+    font-family: Arial, Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+.card {
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
