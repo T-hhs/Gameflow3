@@ -3,7 +3,7 @@ html {
 }
 
 header {
-  text-align: center;
+    text-align: center;
 }
 
 .teams .teamHeader {
@@ -44,6 +44,8 @@ header {
 }
 
 .info article {
+    text-align: center;
+    
     height: 500px;
     width: 30%;
 
@@ -54,4 +56,8 @@ header {
     border-radius: 5px;
 
     float: right;
+}
+
+.infoParagraph {
+    margin: 10px;
 }

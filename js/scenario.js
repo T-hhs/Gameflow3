@@ -1,20 +1,30 @@
-const teamContainer = document.getElementsByClassName("teams");
+const teamContainer = document.getElementsByClassName("teams")[0];
+const scenarioInfo = document.getElementsByClassName("info")[0];
+
+const infoSceneName = document.getElementById("infoScenName");
+const infoTeamName = document.getElementById("infoTeam");
+const infoField = document.getElementById("infoField");
 
 const teams = [
     {
-        naam: "team 1",
+        naam: "Team 1",
+        code: "1",
     },
     {
-        naam: "team 2",
+        naam: "Team 2",
+        code: "1",
     },
     {
-        naam: "team 3",
+        naam: "Team 3",
+        code: "1",
     },
     {
-        naam: "team 4",
+        naam: "Team 4",
+        code: "1",
     },
     {
-        naam: "team 5",
+        naam: "Team 5",
+        code: "1",
     },
 ];
 
@@ -22,16 +32,20 @@ const teams = [
 
 const scenarios = [
     {
-        naam: "arm",
+        naam: "Lokale supermarkt",
+        desc: "Een lokale supermarkt met weinig berijk en totaal geld, maar veel klanttevredenheid en hoge betrouwbaarheid.",
     },
     {
-        naam: "lokaal",
+        naam: "Nationale keten",
+        desc: "Een supermarktbedrijf met veel winkels over het land en dus veel klanten, maar hoge kosten.",
     },
     {
-        naam: "veel schuld",
+        naam: "Geldproblemen",
+        desc: "Een start met een grote supermarkt, maar weinig geld en lage betrouwbaardheid.",
     },
     {
-        naam: "keten",
+        naam: "Huismerkproducten",
+        desc: "Een supermarkt met veel betrouwbaarheid en veel klanten, maar lage productprijzen en middelmatige kwaliteit.",
     },
 ];
 
@@ -41,7 +55,7 @@ const scenarios = [
 teams.forEach(team => {
     const art = document.createElement("article");
     art.classList.add("team");
-    teamContainer[0].appendChild(art);
+    teamContainer.appendChild(art);
     
 
     const p = document.createElement("p");
@@ -54,7 +68,7 @@ teams.forEach(team => {
     select.name = "team";
     select.id = "team";
 
-    let i = 1;
+    let i = 0;
 
     scenarios.forEach(opt => {
         const o = document.createElement("option")
@@ -64,6 +78,15 @@ teams.forEach(team => {
 
         select.appendChild(o);
     });
+
+    select.addEventListener("change", function() {
+        const sc = scenarios[this.value];
+        infoTeamName.textContent = team.naam;
+        infoSceneName.textContent = sc.naam;
+        infoField.textContent = sc.desc;
+
+    });
+
 
     art.appendChild(select);
 });
