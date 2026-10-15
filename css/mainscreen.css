@@ -1,18 +1,73 @@
-html {
+html, body {
+    min-height: 100%;
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
 }
 
 header {
     text-align: center;
+    position: relative;
+    top: 8px;
+    right: 8px;
 }
 
-.button {
-    border-radius: 5px;
-    padding: 20px;
-    margin: 20px;
-    width: 300px;
+.settings-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 13px;
+    border: 1px solid;
+    border-radius: 9px;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.settings-button span:first-child {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.menu {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 21px;
+    min-height: 100vh;
     box-sizing: border-box;
-    color: red;
+    padding: 36px 20px 0;
+}
+
+.menu-button {
+    width: min(310px, 100%);
+    min-height: 73px;
+    border: 0;
+    border-radius: 11px;
+    font-size: 26px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.create-button {
+    background-color: blue;
+}
+
+.quit-button {
+    background-color: red;
+}
+
+.menu-button:focus-visible, .settings-button:focus-visible {
+    outline: 3px, solid;
+    outline-offset: 3px;
+}
+
+@media (max-width = 400) {
+    .menu-button {
+        font-size: 23px;
+    }
 }
