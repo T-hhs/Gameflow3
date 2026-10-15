@@ -26,6 +26,14 @@ header h1 {
     transform: translateY(70px);
 }
 
+footer {
+    background-color: lightyellow;
+    color: black;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
 .settings-button {
     position: absolute;
     top: -7px;
