@@ -14,12 +14,23 @@
     </header>
     <main>
         <div class="inputs">
-            <div class="velden">
-                <p><b>Teamnaam:</b><input id="teamnaam" class="veld" type="text"></p>
-                <p><b>Groepscode:</b><input id="groepscode" class ="veld" type="text"></p>
+            <form class="formulier" id = "groep-definitie" novalidate>
+            <div class= "velden">
+            <label for="teamnaam"><b>Teamnaam:</b></label>
+            <input id="teamnaam" class="veld" type="text" required aria-describedby="teamnaam-error" aria-invalid="false">
+            <br>
+            <span id="teamnaam-error" role="alert"></span>
+            <br>
+            <label for="groepscode"><b>Groepscode:</b></label>
+            <input id="groepscode" class ="veld" type="text" required aria-describedby="groepscode-error" aria-invalid="false">
+            <br>
+            <span id="groepscode-error" role="alert"></span>
+            <br>               
             </div>
+            <button type="submit"><b>Join game</b></button> 
+            </form>
+            <script src="../js/DeelnameGroep.js"></script>
         </div>
-        <button><b>Join game</b></button>
     </main>
 </body>
 
