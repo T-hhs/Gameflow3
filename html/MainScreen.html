@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MainScreen</title>
+    <title>Supermarktmanager Simulator</title>
     <link rel="stylesheet" href="../css/mainscreen.css">
     <script src="../js/mainscreen.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <h1>Supermarkt Simulatie</h1>
-        <button class="settings-button" id="Settings" type="button">
-            <span aria-hidden="true">⚙</span>
-            <span>Settings</span>
+    <header class="top-bar">
+        <button class="favorite-button" type="button" aria-label="Favorieten">
+            <span aria-hidden="true">☆</span>
         </button>
+        <nav class="account-actions" aria-label="Account">
+            <button class="account-button" type="button">Registreren</button>
+            <button class="account-button" type="button">Inloggen</button>
+        </nav>
     </header>
 
-    <main class="menu">
-        <button class="menu-button create-button" id="create-game" type="button">Create Game</button>
-        <button class="menu-button quit-button" id="Quit" type="button">Quit</button>
+    <main class="home">
+        <section class="hero" aria-labelledby="page-title">
+            <h1 id="page-title" class="title-card">Supermarktmanager Simulator</h1>
+            <h2>Run jouw eigen supermarkt!</h2>
+            <p>Beheer je voorraad, bepaal je prijzen en maak slimme keuzes om de beste supermarktmanager te worden</p>
+            <button class="join-button" id="create-game" type="button">Deelnemen met groepscode</button>
+        </section>
     </main>
-    <footer>
-        <p>&copy; 2026 Gameflow. Alle rechten voorbehouden.</p>
-    </footer>
 </body>
 </html>

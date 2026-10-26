@@ -1,98 +1,171 @@
-html, body {
-    margin: 0;
+html,
+body {
     min-height: 100%;
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #fff;
+    background: #f5f7f3;
+    color: #111;
 }
 
 body {
     min-height: 100vh;
 }
 
-header {
+.top-bar {
     position: absolute;
-    top: 20px;
-    right: 0;
-    left: 0;
+    top: 36px;
+    right: 30px;
+    left: 30px;
     display: flex;
-    justify-content: center;
-}
-
-header h1 {
-    margin: 0;
-    color: #222;
-    font-size: 50px;
-    text-align: center;
-    transform: translateY(70px);
-}
-
-footer {
-    background-color: lightyellow;
-    color: black;
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.settings-button {
-    position: absolute;
-    top: -7px;
-    right: 8px;
-    display: inline-flex;
     align-items: center;
-    gap: 9px;
-    padding: 9px 13px;
-    border: 1px solid #777;
-    border-radius: 9px;
-    background: #f5f5f7;
-    color: #222;
-    font-size: 14px;
+    justify-content: space-between;
+}
+
+.favorite-button {
+    display: grid;
+    width: 76px;
+    height: 73px;
+    place-items: center;
+    border: 0;
+    border-radius: 24px;
+    background: #292929;
+    color: #fff;
+    font-size: 23px;
     cursor: pointer;
 }
 
-.settings-button span:first-child {
-    font-size: 20px;
-    line-height: 1;
-}
-
-.menu {
+.account-actions {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 21px;
-    min-height: 100vh;
-    box-sizing: border-box;
-    padding: 0 20px;
+    gap: 34px;
 }
 
-.menu-button {
-    width: min(310px, 100%);
-    min-height: 73px;
+.account-button,
+.join-button {
     border: 0;
-    border-radius: 11px;
+    border-radius: 999px;
+    background: #18784f;
     color: #fff;
-    font-size: 26px;
     font-weight: 700;
     cursor: pointer;
 }
 
-.create-button {
-    background: linear-gradient(110deg, #2462df, #2868e5);
+.account-button {
+    min-width: 177px;
+    min-height: 79px;
+    padding: 0 28px;
+    font-size: 20px;
 }
 
-.quit-button {
-    background: linear-gradient(110deg, #e43131, #e83b36);
+.home {
+    display: flex;
+    min-height: 100vh;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    padding: 110px 30px 30px;
 }
 
-.menu-button:focus-visible,
-.settings-button:focus-visible {
+.hero {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title-card {
+    display: flex;
+    width: min(610px, 100%);
+    min-height: 130px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 32px;
+    padding: 20px 28px;
+    border: 2px solid #439a70;
+    border-radius: 36px;
+    background: #fff;
+    font-size: clamp(26px, 4vw, 36px);
+}
+
+.hero h2 {
+    margin: 0 0 22px;
+    font-size: clamp(22px, 3vw, 30px);
+}
+
+.hero p {
+    max-width: 900px;
+    margin: 0 0 34px;
+    font-size: clamp(16px, 2vw, 18px);
+    line-height: 1.5;
+}
+
+.join-button {
+    width: min(505px, 100%);
+    min-height: 75px;
+    padding: 12px 24px;
+    font-size: clamp(22px, 3vw, 30px);
+}
+
+.account-button:hover,
+.join-button:hover {
+    background: #126641;
+}
+
+.favorite-button:hover {
+    background: #414141;
+}
+
+.favorite-button:focus-visible,
+.account-button:focus-visible,
+.join-button:focus-visible {
     outline: 3px solid #222;
-    outline-offset: 3px;
+    outline-offset: 4px;
 }
 
-@media (max-width: 400px) {
-    .menu-button {
-        font-size: 23px;
+/*Dit is voor het aanpassen op mobiele telefoon formaat.*/
+@media (max-width: 650px) {
+    .top-bar {
+        top: 20px;
+        right: 16px;
+        left: 16px;
+    }
+
+    .favorite-button {
+        width: 54px;
+        height: 54px;
+        border-radius: 18px;
+    }
+
+    .account-actions {
+        gap: 10px;
+    }
+
+    .account-button {
+        min-width: 0;
+        min-height: 54px;
+        padding: 0 14px;
+        font-size: 14px;
+    }
+
+    .home {
+        padding: 110px 20px 30px;
+    }
+
+    .title-card {
+        min-height: 100px;
+        margin-bottom: 26px;
+        border-radius: 28px;
+    }
+}
+
+@media (max-width: 380px) {
+    .top-bar {
+        right: 10px;
+        left: 10px;
+    }
+
+    .account-button {
+        padding: 0 10px;
     }
 }
