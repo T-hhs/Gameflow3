@@ -1,0 +1,6 @@
+#naam-fout, #email-fout, #waxchtwoord-fout, #herhaalwachtwoord-fout{
+    display: block;
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
