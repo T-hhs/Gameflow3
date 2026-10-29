@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GameFlow | Supermarktmanager Simulator</title>
+<style>
+:root{--bg:#f4f6f2;--card:#fff;--ink:#202421;--muted:#68716a;--line:#d8e1d9;--green:#168253;--pale:#e6f4eb;--dark:#202b24}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+button,input,select,textarea{font:inherit}button,a,select,input,textarea{outline-offset:3px}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #82cba5}
+[hidden]{display:none!important}.app{max-width:1180px;width:calc(100% - 32px);margin:24px auto}.header{display:flex;align-items:center;gap:15px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 20px}.mark{display:grid;place-items:center;width:48px;height:48px;background:#292d2a;color:#fff;border-radius:14px;font-size:25px}.brand{flex:1}.brand small,.eyebrow{display:block;margin:0 0 4px;color:var(--green);font-size:.72rem;font-weight:800;letter-spacing:.12em}.brand h1{font-size:clamp(1rem,2.5vw,1.3rem);margin:0}.btn{border:1px solid transparent;border-radius:999px;padding:10px 16px;min-height:42px;font-weight:750;cursor:pointer}.primary{background:var(--green);color:white}.secondary,.outline{background:white;color:var(--ink);border-color:var(--line)}.outline{border-color:var(--green)}.screen{margin-top:24px}.heading{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin:0 2px 20px}.heading h2{margin:0 0 5px;font-size:clamp(1.7rem,4vw,2.2rem);letter-spacing:-.04em}.heading p{margin:0;color:var(--muted)}.pill{padding:7px 12px;border-radius:999px;background:var(--pale);color:#10643f;font-size:.8rem;font-weight:800;white-space:nowrap}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:22px;min-width:0}.panel h3{margin:0 0 8px}.muted{color:var(--muted)}.teams{display:grid;gap:10px;margin-top:15px}.formrow{display:grid;grid-template-columns:85px 1fr;align-items:center;gap:10px;padding:10px;border:1px solid var(--line);border-radius:10px;font-weight:700}select,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink)}.scenario{display:flex;gap:12px;padding:13px;background:var(--bg);border-radius:12px;margin-top:10px}.num{padding:5px 9px;height:max-content;background:var(--pale);border-radius:8px;color:#10643f;font-weight:800}.scenario h4,.scenario p{margin:0}.scenario p{font-size:.86rem;color:var(--muted)}.actions{display:flex;justify-content:space-between;gap:12px;margin-top:20px}.goalgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}.choice{display:flex;gap:10px;padding:13px;border:1px solid var(--line);border-radius:12px;cursor:pointer}.choice:has(input:checked){background:var(--pale);border-color:var(--green)}.choice input{accent-color:var(--green);margin-top:5px}.choice strong,.choice small{display:block}.choice small{font-size:.8rem;color:var(--muted)}.desc,.budget{padding:16px;margin-top:14px;background:var(--bg);border-radius:12px}.budget strong{display:block;font-size:1.6rem}.event{padding:20px;background:#fff6df;border:1px solid #f0dfb2;border-radius:16px}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}.meter{height:8px;background:#e9eee9;border-radius:99px;overflow:hidden;margin:14px 0 7px}.meter span{display:block;height:100%;background:var(--green)}.radio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.radio-card{display:flex;gap:8px;padding:12px;border:1px solid var(--line);border-radius:12px}.roundgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.leaderboard{list-style:none;margin:18px 0;padding:0}.leaderboard li{display:flex;align-items:center;gap:12px;padding:14px 3px;border-bottom:1px solid var(--line)}.rank{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:#edf2ed;font-weight:800}.team{flex:1;font-weight:750}.position{padding:14px;background:var(--pale);border-radius:12px}.score{background:var(--dark);color:white;border-radius:16px;padding:22px}.score .eyebrow{color:#b6e6ca}.bigscore{font-size:3.7rem;font-weight:850;letter-spacing:-.06em;line-height:1.2}.hint{margin-top:15px;min-height:170px}.summary{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:16px}.result{background:var(--dark);color:white;text-align:center;border-radius:16px;padding:24px}.result .bigscore{font-size:4rem}.settings{background:white;border:1px solid var(--line);border-radius:14px;padding:16px;margin:10px 0 0 auto;max-width:350px}.footer{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:16px 2px;margin-top:24px;color:var(--muted);font-size:.78rem}.toast{position:fixed;right:20px;bottom:20px;background:var(--dark);color:white;border-radius:12px;padding:14px 18px;max-width:380px;box-shadow:0 8px 24px #0002}.contrast{--bg:#fff;--card:#fff;--ink:#000;--muted:#333;--line:#777;--green:#006b3c;--pale:#e2f3e8}
+@media(max-width:800px){.grid2,.roundgrid{grid-template-columns:1fr}.kpis{grid-template-columns:1fr}.radio-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.app{width:calc(100% - 18px);margin:9px auto}.header{padding:12px;gap:9px}.mark{width:40px;height:40px}.header .btn{padding:8px;font-size:.8rem}.heading{flex-direction:column}.panel{padding:16px}.goalgrid{grid-template-columns:1fr}.actions,.summary{flex-direction:column;align-items:stretch}.actions .btn,.summary .btn{width:100%}.footer{flex-direction:column}.formrow{grid-template-columns:65px 1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="header">
+  <a class="mark" href="#scenario" aria-label="Startscherm">☆</a>
+  <div class="brand"><small>GAMEFLOW</small><h1>Supermarktmanager Simulator</h1></div>
+  <button class="btn outline" id="settingsBtn" aria-expanded="false">⚙ Settings</button>
+</header>
+<div class="settings" id="settings" hidden><strong>Instellingen</strong><p class="muted">Demo-instelling; voorkeuren worden niet opgeslagen.</p><label><input id="contrast" type="checkbox"> Extra hoog contrast</label><p><button class="btn secondary" id="closeSettings">Sluiten</button></p></div>
+
+<main>
+<section class="screen" data-screen="scenario">
+  <div class="heading"><div><span class="eyebrow">VOORBEREIDING</span><h2>Kies een startscenario</h2><p>Kies voor elk team een startsituatie.</p></div><span class="pill">Prototype</span></div>
+  <div class="grid2">
+    <section class="panel"><h3>Teams en scenario's</h3><p class="muted">Selecteer een scenario per team.</p><div class="teams" id="teams">
+      <label class="formrow">Team 1<select data-team="1"><option>Scenario 1</option><option>Scenario 2</option><option>Scenario 3</option><option>Scenario 4</option><option>Scenario 5</option><option>Scenario 6</option></select></label>
+      <label class="formrow">Team 2<select data-team="2"><option>Scenario 2</option><option>Scenario 1</option><option>Scenario 3</option><option>Scenario 4</option><option>Scenario 5</option><option>Scenario 6</option></select></label>
+      <label class="formrow">Team 3<select data-team="3"><option>Scenario 3</option><option>Scenario 1</option><option>Scenario 2</option><option>Scenario 4</option><option>Scenario 5</option><option>Scenario 6</option></select></label>
+      <label class="formrow">Team 4<select data-team="4"><option>Scenario 4</option><option>Scenario 1</option><option>Scenario 2</option><option>Scenario 3</option><option>Scenario 5</option><option>Scenario 6</option></select></label>
+    </div></section>
+    <section class="panel"><h3>Scenario-overzicht</h3>
+      <article class="scenario"><span class="num">01</span><div><h4>Scenario 1</h4><p>Een stabiele supermarkt met ruimte om te groeien.</p></div></article>
+      <article class="scenario"><span class="num">02</span><div><h4>Scenario 2</h4><p>Een krap budget vraagt om scherpe keuzes.</p></div></article>
+      <article class="scenario"><span class="num">03</span><div><h4>Scenario 3</h4><p>Een drukke winkel met kansen voor verbetering.</p></div></article>
+      <article class="scenario"><span class="num">04–06</span><div><h4>Scenario 4 t/m 6</h4><p>Voorbeeldbeschrijvingen; vervang door de officiële spelinhoud.</p></div></article>
+    </section>
+  </div>
+  <div class="actions"><span class="muted">Volgende stap: doelen en strategie.</span><button class="btn primary" data-go="goals">Verder naar doelen →</button></div>
+</section>
+
+<section class="screen" data-screen="goals" hidden>
+  <div class="heading"><div><span class="eyebrow">VOORBEREIDING · RONDE <b class="roundNo">1</b></span><h2>Doelen en strategie</h2><p>Kies drie doelen voor jullie supermarkt.</p></div><span class="pill roundPill">Ronde 1 / 4</span></div>
+  <div class="grid2">
+    <section class="panel"><h3>Welke doelen kies je?</h3><p class="muted">Selecteer precies drie doelen.</p><div class="goalgrid" id="goalList">
+      <label class="choice"><input type="checkbox" value="Klanttevredenheid"><span><strong>Klanttevredenheid</strong><small>Verbeter de klantervaring.</small></span></label>
+      <label class="choice"><input type="checkbox" value="Winst"><span><strong>Winst</strong><small>Werk aan een gezond resultaat.</small></span></label>
+      <label class="choice"><input type="checkbox" value="Duurzaamheid"><span><strong>Duurzaamheid</strong><small>Beperk verspilling en impact.</small></span></label>
+      <label class="choice"><input type="checkbox" value="Personeel"><span><strong>Personeel</strong><small>Ondersteun inzet en tevredenheid.</small></span></label>
+      <label class="choice"><input type="checkbox" value="Voorraadbeheer"><span><strong>Voorraadbeheer</strong><small>Houd vraag en voorraad in balans.</small></span></label>
+      <label class="choice"><input type="checkbox" value="Omzetgroei"><span><strong>Omzetgroei</strong><small>Vergroot verkoopprestaties.</small></span></label>
+    </div><p class="muted" id="goalMessage" role="status">0 / 3 doelen gekozen.</p></section>
+    <section class="panel"><h3>Welke strategie kies je?</h3><label for="strategy">Strategie</label><select id="strategy"><option>Gebalanceerde groei</option><option>Kosten beheersen</option><option>Klant eerst</option></select><div class="desc"><strong>Strategiebeschrijving</strong><p id="strategyDesc">Verdeel aandacht over de gekozen doelen en maak bewuste afwegingen.</p></div><div class="budget"><span class="muted">Beschikbaar budget (voorbeeld)</span><strong>€ 10.000</strong></div></section>
+  </div>
+  <div class="actions"><button class="btn secondary" data-go="scenario">← Terug</button><button class="btn primary" id="toEvent">Verder naar event →</button></div>
+</section>
+
+<section class="screen" data-screen="event" hidden>
+  <div class="heading"><div><span class="eyebrow">GEBEURTENIS · RONDE <b class="roundNo">1</b></span><h2>Event</h2><p>Bespreek samen welke aanpak bij deze gebeurtenis past.</p></div><span class="pill roundPill">Ronde 1 / 4</span></div>
+  <section class="event"><span class="eyebrow">LET OP</span><h3 id="eventTitle">Een onverwachte gebeurtenis beïnvloedt jullie doelen.</h3><p id="eventDesc">Bespreek samen wat het beste plan van aanpak is en onderneem de juiste acties.</p></section>
+  <div class="kpis">
+    <article class="panel"><span class="pill">KPI 1</span><h3>Klanttevredenheid</h3><p class="muted">Voorbeeldindicator voor de klantervaring.</p><div class="meter"><span style="width:72%"></span></div><strong>72 / 100</strong></article>
+    <article class="panel"><span class="pill">KPI 2</span><h3>Financiële gezondheid</h3><p class="muted">Voorbeeldindicator voor de financiën.</p><div class="meter"><span style="width:64%"></span></div><strong>64 / 100</strong></article>
+    <article class="panel"><span class="pill">KPI 3</span><h3>Voorraadbeheer</h3><p class="muted">Voorbeeldindicator voor voorraad en verspilling.</p><div class="meter"><span style="width:81%"></span></div><strong>81 / 100</strong></article>
+  </div>
+  <section class="panel" style="margin-top:16px"><h3>Welke actie kiezen jullie?</h3><p class="muted">De gevolgen zijn demo-effecten, geen gevalideerde spelregels.</p><div class="radio-grid">
+    <label class="radio-card"><input type="radio" name="eventAction" value="Voorzichtig handelen" checked><span><strong>Voorzichtig handelen</strong><br><small>Beperk risico en bewaak het budget.</small></span></label>
+    <label class="radio-card"><input type="radio" name="eventAction" value="Investeren in verbetering"><span><strong>Investeren</strong><br><small>Accepteer kosten voor verbetering.</small></span></label>
+    <label class="radio-card"><input type="radio" name="eventAction" value="Teamoverleg"><span><strong>Teamoverleg</strong><br><small>Stem de aanpak gezamenlijk af.</small></span></label>
+  </div></section>
+  <div class="actions"><button class="btn secondary" data-go="goals">← Terug naar doelen</button><button class="btn primary" data-go="round">Naar spellenronde →</button></div>
+</section>
+
+<section class="screen" data-screen="round" hidden>
+  <div class="heading"><div><span class="eyebrow">GAMEFLOW · LIVE OVERZICHT</span><h2 id="roundTitle">Ronde 1</h2><p id="roundSubtitle">Lente · Bekijk de tussenstand van de teams.</p></div><span class="pill roundPill">Ronde 1 / 4</span></div>
+  <div class="roundgrid">
+    <section class="panel"><div class="heading"><div><span class="eyebrow">TUSSENSTAND</span><h3>Leaderboard</h3></div><span class="muted">Voorbeelddata</span></div><ol class="leaderboard" id="leaderboard"></ol><div class="position"><span class="muted">Jullie positie</span><br><strong id="position">Team 1 staat op plek 1</strong></div></section>
+    <div><section class="score"><span class="eyebrow">JULLIE SCORE</span><div class="bigscore"><span id="score">100</span></div><p id="scoreCaption">Team 1 · demonstratiescore</p></section><section class="panel hint" style="margin-top:15px"><h3>✦ Hint</h3><p id="hint">Let op de gevolgen van jullie gekozen strategie voor de doelen.</p><small class="muted">Voorbeeldhint — vervang door de officiële hint.</small></section></div>
+  </div>
+  <section class="panel summary"><div><span class="eyebrow">JULLIE KEUZES</span><h3>Rondeoverzicht</h3><p id="roundSummary" class="muted">Jullie doelen en strategie verschijnen hier.</p></div><button class="btn secondary" data-go="event">← Terug naar event</button></section>
+  <div class="actions"><button class="btn secondary" data-go="goals">Doelen aanpassen</button><button class="btn primary" id="finishRound">Ronde afronden →</button></div>
+</section>
+
+<section class="screen" data-screen="results" hidden>
+  <div class="heading"><div><span class="eyebrow">GAMEFLOW · VOORTGANG</span><h2 id="resultTitle">Resultaat ronde 1</h2><p>Bekijk de demonstratieresultaten en reflecteer met je team.</p></div><span class="pill roundPill">Ronde 1 / 4</span></div>
+  <section class="result"><span class="eyebrow">TOTAALSCORE (DEMO)</span><div class="bigscore"><span id="resultScore">100</span> <small>punten</small></div><p id="resultMessage">De voorbeeldronde is afgerond.</p></section>
+  <div class="grid2" style="margin-top:16px"><section class="panel"><h3>Keuzes van jullie team</h3><p><strong>Doelen:</strong> <span id="resultGoals">Nog niet gekozen</span></p><p><strong>Strategie:</strong> <span id="resultStrategy">Gebalanceerde groei</span></p><p><strong>Actie:</strong> <span id="resultAction">Voorzichtig handelen</span></p></section><section class="panel"><h3>Reflectie voor het team</h3><p>Welke keuze werkte goed? Welke KPI verdient aandacht?</p><label for="reflection">Teamnotitie</label><textarea id="reflection" rows="4" placeholder="Schrijf een korte reflectie..."></textarea><p class="muted">Notitie wordt niet opgeslagen.</p></section></div>
+  <div class="actions"><button class="btn secondary" data-go="round">← Terug naar spellenronde</button><button class="btn primary" id="nextRound">Volgende ronde →</button></div>
+</section>
+</main>
+<footer class="footer"><span>GameFlow · Front-end prototype</span><span>Voorbeeldgegevens — geen backend of officiële scoreberekening</span></footer>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</div>
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const $$ = (s) => [...document.querySelectorAll(s)];
+  const state = { round:1, score:100, team:"Team 1", goals:[], strategy:"Gebalanceerde groei", action:"Voorzichtig handelen",
+    scores:[{team:"Team 1",score:120},{team:"Team 4",score:110},{team:"Team 2",score:95},{team:"Team 3",score:85}] };
+  const seasons=["Lente","Zomer","Herfst","Winter"];
+  const hints=[
+    "Let op de gevolgen van jullie gekozen strategie voor de doelen.",
+    "Bekijk welke KPI achterblijft en bespreek waar verbetering mogelijk is.",
+    "Houd het budget in de gaten wanneer jullie een nieuwe actie kiezen.",
+    "Vergelijk het eindresultaat met jullie oorspronkelijke doelen."
+  ];
+  const descriptions={
+    "Gebalanceerde groei":"Verdeel aandacht over de gekozen doelen en maak bewuste afwegingen.",
+    "Kosten beheersen":"Let extra op uitgaven en gebruik het beschikbare budget zorgvuldig.",
+    "Klant eerst":"Geef prioriteit aan klantbeleving en onderzoek hoe keuzes de tevredenheid beïnvloeden."
+  };
+  let toastTimer;
+  function notify(message){const t=$("#toast");t.textContent=message;t.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.hidden=true,3500);}
+  function show(name){
+    const target=$(`[data-screen="${name}"]`); if(!target)return;
+    $$("[data-screen]").forEach(s=>s.hidden=s!==target);
+    $$(".roundNo").forEach(e=>e.textContent=state.round);
+    $$(".roundPill").forEach(e=>e.textContent=`Ronde ${state.round} / 4`);
+    $("#roundTitle").textContent=`Ronde ${state.round}`;
+    $("#roundSubtitle").textContent=`${seasons[state.round-1]} · Bekijk de tussenstand van de teams.`;
+    $("#resultTitle").textContent=`Resultaat ronde ${state.round}`;
+    $("#resultMessage").textContent=state.round===4?"De laatste voorbeeldronde is afgerond. Dit is een demonstratieweergave.":"De voorbeeldronde is afgerond. Bespreek de keuzes voordat je verdergaat.";
+    $("#nextRound").textContent=state.round===4?"Bekijk eindstand":"Volgende ronde →";
+    if(name==="round")renderRound(); if(name==="results")renderResults();
+    history.replaceState(null,"","#"+name); window.scrollTo({top:0,behavior:"smooth"});
+  }
+  function selectedGoals(){return $$('input[type="checkbox"][value]').filter(i=>i.checked).map(i=>i.value);}
+  function renderGoals(){const g=selectedGoals();$("#goalMessage").textContent=`${g.length} / 3 doelen gekozen.`;}
+  function renderLeaderboard(){
+    const list=$("#leaderboard");list.replaceChildren();
+    const sorted=[...state.scores].sort((a,b)=>b.score-a.score);
+    sorted.forEach((item,index)=>{const li=document.createElement("li");const rank=document.createElement("span");rank.className="rank";rank.textContent=index+1;const team=document.createElement("span");team.className="team";team.textContent=item.team;const score=document.createElement("strong");score.textContent=`${item.score} ptn`;li.append(rank,team,score);list.append(li);});
+    const place=sorted.findIndex(x=>x.team===state.team)+1;$("#position").textContent=`${state.team} staat op plek ${place}`;
+  }
+  function renderRound(){renderLeaderboard();$("#score").textContent=state.score;$("#scoreCaption").textContent=`${state.team} · ${seasons[state.round-1]} · demonstratiescore`;$("#hint").textContent=hints[state.round-1];$("#roundSummary").textContent=`Doelen: ${state.goals.length?state.goals.join(", "):"nog niet gekozen"}. Strategie: ${state.strategy}. Actie: ${state.action}.`;}
+  function renderResults(){$("#resultScore").textContent=state.score;$("#resultGoals").textContent=state.goals.length?state.goals.join(", "):"Nog niet gekozen";$("#resultStrategy").textContent=state.strategy;$("#resultAction").textContent=state.action;}
+  function collectChoices(){const goals=selectedGoals();if(goals.length!==3){notify("Kies precies drie doelen voordat je verdergaat.");show("goals");return false;}state.goals=goals;state.strategy=$("#strategy").value;const action=$('input[name="eventAction"]:checked');state.action=action?action.value:"Voorzichtig handelen";return true;}
+  $$("[data-go]").forEach(b=>b.addEventListener("click",()=>show(b.dataset.go)));
+  $$('a[href="#scenario"]').forEach(a=>a.addEventListener("click",e=>{e.preventDefault();show("scenario");}));
+  $$('input[type="checkbox"][value]').forEach(i=>i.addEventListener("change",()=>{if(selectedGoals().length>3){i.checked=false;notify("Je kunt maximaal drie doelen kiezen.");}renderGoals();}));
+  $("#strategy").addEventListener("change",e=>$("#strategyDesc").textContent=descriptions[e.target.value]);
+  $("#toEvent").addEventListener("click",()=>{if(!collectChoices())return;show("event");});
+  $("#finishRound").addEventListener("click",()=>{
+    const delta=state.action==="Investeren in verbetering"?15:state.action==="Teamoverleg"?8:3;
+    state.score+=delta;const own=state.scores.find(x=>x.team===state.team);if(own)own.score=state.score;
+    notify(`Demo: ${state.team} krijgt ${delta} punten. Dit is geen officiële scoreberekening.`);show("results");
+  });
+  $("#nextRound").addEventListener("click",()=>{if(state.round>=4){notify("Alle vier demo-rondes zijn bekeken.");return;}state.round++;show("goals");notify(`Ronde ${state.round}: ${seasons[state.round-1]}.`);});
+  $("#settingsBtn").addEventListener("click",()=>{const panel=$("#settings");panel.hidden=!panel.hidden;$("#settingsBtn").setAttribute("aria-expanded",String(!panel.hidden));});
+  $("#closeSettings").addEventListener("click",()=>{$("#settings").hidden=true;$("#settingsBtn").setAttribute("aria-expanded","false");});
+  $("#contrast").addEventListener("change",e=>document.body.classList.toggle("contrast",e.target.checked));
+  $("#teams").addEventListener("change",e=>{const select=e.target.closest("select[data-team]");if(!select)return;state.team=`Team ${select.dataset.team}`;notify(`Positievoorbeeld geselecteerd: ${state.team}.`);renderLeaderboard();});
+  const initial=location.hash.slice(1);show(["scenario","goals","event","round","results"].includes(initial)?initial:"scenario");
+})();
+</script>
+</body>
+</html>
