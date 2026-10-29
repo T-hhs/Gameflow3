@@ -3,7 +3,7 @@ const register = document.getElementById("register");
 const logIn = document.getElementById("log in");
 
 createGame.addEventListener("click", () => {
-    window.location.href = "PlayerJoining.html";
+    window.location.href = "DeelnameGroep.html";
 });
 
 register.addEventListener("click", () => {
