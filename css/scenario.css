@@ -1,5 +1,10 @@
 html {
     font-family: Arial, Helvetica, sans-serif;
+    word-wrap:break-word;
+}
+
+body {
+    background-color: #F5F7F2;
 }
 
 header {
@@ -21,7 +26,8 @@ header {
     height: 50px;
     margin: 5px;
     margin-left: 5%;
-    border: 2px solid black;
+    border: 1px solid #19734B;
+    background-color: #F5F5F5;
     border-radius: 5px;
 
     display: flex;
@@ -39,7 +45,8 @@ header {
     margin-left: 0%;
     margin-right: 0%;
 
-    border: 1px solid black;
+    border: 1px solid #19734B;
+    background-color: #E0E0E0;
     border-radius: 5px;
 }
 
@@ -52,7 +59,8 @@ header {
     margin-right: 5%;
     margin-top: 5%;
 
-    border: 2px solid black;
+    border: 1px solid #19734B;
+    background-color: #F5F5F5;
     border-radius: 5px;
 
     float: right;
