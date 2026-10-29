@@ -136,6 +136,7 @@ body {
     font-weight: 700;
 }
 
+/*Formaat voor telefoon.*/
 @media (max-width: 480px) {
     .auth-shell {
         justify-content: flex-start;
