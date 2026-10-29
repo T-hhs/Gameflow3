@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inloggen | Supermarktmanager Simulator</title>
+    <link rel="stylesheet" href="../css/LogIn.css">
+    <script src="../js/LogIn.js" defer></script>
+</head>
+
+<body>
+    <main class="auth-shell">
+        <a class="back-link" href="MainScreen.html">Terug naar start</a>
+
+        <section class="auth-card" aria-labelledby="page-title">
+            <h1 id="page-title">Welkom terug</h1>
+            <p class="intro">Log in om verder te spelen.</p>
+
+            <form id="login-form" method="post">
+                <div class="form-field">
+                    <label for="naam">Naam</label>
+                    <input type="naam" id="naam" name="naam" autocomplete="naam" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="wachtwoord">Wachtwoord</label>
+                    <input type="password" id="wachtwoord" name="wachtwoord" autocomplete="current-password" required>
+                </div>
+
+                <button class="submit-button" type="submit">Inloggen</button>
+                <p class="form-feedback" id="login-feedback" aria-live="polite" role="status"></p>
+            </form>
+
+            <p class="switch-link">Nog geen account? <a href="Register.html">Registreer</a></p>
+        </section>
+    </main>
+</body>
+</html>
