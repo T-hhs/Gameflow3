@@ -1,41 +1,128 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startscenarios</title>
-    <link rel="stylesheet" href="../css/scenario.css">
-    <script src="../js/scenario.js" defer></script>
+    <title>Supermarktmanager Simulator</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
+<div class="container">
+
+    <!-- Header -->
     <header>
-        <h1>Selecteer Scenario</h1>
-        <p>Kies voor elk team een scenario. Je kunt het scenario per team instellen en de details rechts bekijken</p>
+        <div class="logo-container">
+            <div class="logo">☆</div>
+            <h3>Supermarktmanager Simulator</h3>
+        </div>
+
+        <button class="settings-btn">
+            ⚙ Settings
+        </button>
     </header>
 
-    <aside>
-        <section class="info">
-            <article>
-                <h2 id="infoTeam">Scenario informatie</h2>
-                <h3 id="infoScenName">Selecteer een scenario om informatie te zien</h3>
-                <p class="infoParagraph" id="infoField"></p>
-            </article>
-        </section>
-    </aside>
-    
     <main>
-        <section class="teams">
-            <div class="teamHeader">
-                <p><b>Team</b></p>
-                <p><b>Scenario</b></p>
+
+        <!-- Dashboard -->
+        <div class="dashboard-header">
+            <h2>Dashboard</h2>
+            <span class="ronde">Ronde 1/4</span>
+        </div>
+
+        <!-- Beslissingen -->
+        <section class="beslissingen">
+
+            <div class="informatie">
+
+                <div>
+                    <h3>Welke beslissing neem je?</h3>
+                    <p>
+                        Kies hieronder 3 van de 6 doelen
+                        om je supermarkt te beheren
+                    </p>
+                </div>
+
+                <div class="budget">
+                    <h3>Beschikbaar budget</h3>
+                    <div class="budget-bedrag">€10000</div>
+                </div>
+
             </div>
-            
 
-            
+            <!-- Uitklapbare doelen -->
+            <div class="doelen-grid">
+
+                <details class="uitklapbaar">
+                    <summary>Doel 1</summary>
+                    <div class="tekstvak">
+                        <!-- Beschrijving doel 1 -->
+                    </div>
+                </details>
+
+                <details class="uitklapbaar">
+                    <summary>Doel 2</summary>
+                    <div class="tekstvak">
+                        <!-- Beschrijving doel 2 -->
+                    </div>
+                </details>
+
+                <details class="uitklapbaar">
+                    <summary>Doel 3</summary>
+                    <div class="tekstvak">
+                        <!-- Beschrijving doel 3 -->
+                    </div>
+                </details>
+
+                <details class="uitklapbaar">
+                    <summary>Doel 4</summary>
+                    <div class="tekstvak">
+                        <!-- Beschrijving doel 4 -->
+                    </div>
+                </details>
+
+                <details class="uitklapbaar">
+                    <summary>Doel 5</summary>
+                    <div class="tekstvak">
+                        <!-- Beschrijving doel 5 -->
+                    </div>
+                </details>
+
+                <details class="uitklapbaar">
+                    <summary>Doel 6</summary>
+                    <div class="tekstvak">
+                        <!-- Beschrijving doel 6 -->
+                    </div>
+                </details>
+
+            </div>
+
         </section>
-    </main>
-    
 
-    
+        <!-- Strategie -->
+        <section class="strategie">
+
+            <h3>Welke strategie kies je?</h3>
+
+            <p>
+                Kies hieronder een strategie
+                om je doelen te behalen
+            </p>
+
+            <details class="uitklapbaar strategie-uitklapbaar">
+                <summary>Strategie 1</summary>
+
+                <div class="tekstvak">
+                    <!--strategiebeschrijving -->
+                </div>
+            </details>
+
+        </section>
+
+    </main>
+
+</div>
+
 </body>
 </html>
