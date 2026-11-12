@@ -1,5 +1,4 @@
 
-/* Algemene instellingen */
 
 * {
     margin: 0;
@@ -13,7 +12,6 @@ body {
     color: #111;
 }
 
-/* Hoofdcontainer */
 
 .container {
     width: 100%;
@@ -23,7 +21,6 @@ body {
 }
 
 
-/* Header */
 
 header {
     height: 100px;
@@ -128,7 +125,6 @@ main {
     font-size: 11px;
 }
 
-/* Budget */
 
 .budget {
     text-align: center;
@@ -150,7 +146,6 @@ main {
     font-weight: bold;
 }
 
-/* Doelen grid */
 
 .doelen-grid {
     display: grid;
@@ -159,14 +154,12 @@ main {
     margin-top: 25px;
 }
 
-/* Uitklapbare onderdelen */
 
 .uitklapbaar {
     width: 100%;
     min-width: 0;
 }
 
-/* Witte afgeronde balk */
 
 .uitklapbaar summary {
     display: flex;
@@ -187,13 +180,11 @@ main {
     list-style: none;
 }
 
-/* Standaard pijltje verwijderen */
 
 .uitklapbaar summary::-webkit-details-marker {
     display: none;
 }
 
-/* Zwart rond icoontje */
 
 .uitklapbaar summary::before {
     content: "☆";
@@ -213,7 +204,6 @@ main {
     font-size: 17px;
 }
 
-/* Pijltje rechts */
 
 .uitklapbaar summary::after {
     content: "▼";
@@ -223,13 +213,11 @@ main {
     transition: transform 0.2s;
 }
 
-/* Pijltje draaien bij openen */
 
 .uitklapbaar[open] summary::after {
     transform: rotate(180deg);
 }
 
-/* Tekstvak onder doel */
 
 .tekstvak {
     min-height: 100px;
@@ -244,7 +232,6 @@ main {
     line-height: 1.6;
 }
 
-/* Strategie */
 
 .strategie {
     margin-top: 42px;
@@ -259,7 +246,6 @@ main {
     margin: 20px auto;
 }
 
-/* Mobiele schermen */
 
 @media (max-width: 650px) {
 
