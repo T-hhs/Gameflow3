@@ -5,7 +5,7 @@ html {
 
 body {
     background-color: #F5F7F2;
-    margin-top: 50px;
+    margin-bottom: 50px;
     text-align: center;
 }
 
@@ -22,7 +22,7 @@ header {
 
     margin-left: 25%;
 
-    border: 1px solid #19734B;
+    border: 2px solid #19734B;
     background-color: #FFFFFF;
     border-radius: 25px;
 }
@@ -46,7 +46,7 @@ header {
     width: 30%;
     height: 50px;
     border-radius: 10px;
-    border: 1px solid #19734B;
+    border: 2px solid #19734B;
 }
 
 .opt select {
