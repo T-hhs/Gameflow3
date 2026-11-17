@@ -13,10 +13,13 @@ ON UPDATE CASCADE ON DELETE NO ACTION);
 
 CREATE TABLE Team (
 groepscode VARCHAR(10) NOT NULL,
-teamnaam VARCHAR(30),
+teamnaam VARCHAR(30) NOT NULL,
 wachtwoord VARCHAR(20) NOT NULL,
 hint VARCHAR(60),
-PRIMARY KEY (groepscode));
+game VARCHAR(10) NOT NULL,
+PRIMARY KEY (groepscode),
+FOREIGN KEY (game) REFERENCES Serious_game(sg_code)
+ON UPDATE NO ACTION ON DELETE NO ACTION);
 
 CREATE TABLE Supermarkt (
 supermarktnr INT NOT NULL,
@@ -55,6 +58,7 @@ PRIMARY KEY (KPI_code));
 
 CREATE TABLE Doel (
 doelcode VARCHAR(20) NOT NULL,
+doelnaam VARCHAR(50) NOT NULL,
 succesfactor VARCHAR(50) NOT NULL,
 PRIMARY KEY (doelcode));
 
