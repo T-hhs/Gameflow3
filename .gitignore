@@ -3,5 +3,5 @@
 
 *.dll
 *.exe
-obj
-bin/
+backend/obj
+backend/bin
