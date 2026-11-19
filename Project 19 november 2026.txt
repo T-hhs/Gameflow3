@@ -1,0 +1,40 @@
+Demo's presenteren:
+
+Smart Environment 2:
+Ze hebben al een werkende website
+Scrumproces
+Takenverdeling
+Samenwerking
+Voortgang
+
+Werken aan interactie en systemen koppelen
+Met wireframes of figma ontwerpen
+
+Smart Environment 3 (Klimaatmonitor):
+Inlogscherm (gebruikersnaam en wachtwoord)
+Wachtwoord vergeten?
+Beginscherm/dashboard
+Instellingenscherm
+Planning -> Stand-up -> Bouwen -> Review -> Retro
+De complexiteit van de user stories bepalen door punten.
+Rollen in het project.
+
+Gameflow 1:
+Ze werken aan een management voor een resort.
+Zij gebruiken wel registreren.
+Startprofiel: standaard of custom
+Competitie (de game zelf/spellenronde)
+Beslissingen per ronde
+Extra beslissingen 
+Tussenscore ranglijst => Feedback na elke ronde
+Hoe zit het met de teamverdeling?
+
+Gameflow 5:
+Ze werken aan ene panda restaurant.
+Penguin diner?
+
+We moeten nog werken aan het inlogscherm (ik heb het al gemaakt, maar misschien nog uitbreiden)
+Ze laten hun CRUD-endpoints zien met Swagger
+Verder laten ze hun SQL Server zien.
+Wachtwoord verbergen en tonen.
+Teamscherm met teamnaam en -code.
