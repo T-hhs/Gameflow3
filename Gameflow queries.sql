@@ -1,4 +1,4 @@
-SELECT * FUSE Gameflow3;
+/* SELECT * FUSE Gameflow3;
 GO
 
 CREATE VIEW Tussenscore_ranglijst AS
@@ -19,4 +19,7 @@ JOIN Supermarkt S
 ON T.groepscode = S.groep
 JOIN Bepaling B
 ON S.supermarktnr = B.supermarktnr
-GROUP BY T.groepscode, T.teamnaam;
+GROUP BY T.groepscode, T.teamnaam; */
+
+SELECT *
+FROM AspNetRoles;

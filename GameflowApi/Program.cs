@@ -4,6 +4,7 @@ using GameflowApi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//Services toevoegen
 // Database
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
@@ -17,6 +18,9 @@ builder.Services
 
 // Swagger/OpenAPI
 builder.Services.AddOpenApi();
+
+//Autorisatie
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
@@ -43,5 +47,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.Run();
