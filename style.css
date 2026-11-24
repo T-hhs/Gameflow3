@@ -54,15 +54,20 @@ textarea:focus-visible {
   margin: 24px auto;
 }
 
+
 .header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 16px 20px;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px 28px;
+    background: var(--dark);
+    color: #ffffff;
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(32, 43, 36, 0.15);
 }
+
 
 .mark {
   display: grid;
@@ -477,10 +482,56 @@ textarea {
     margin: 9px auto;
   }
 
-  .header {
-    gap: 9px;
-    padding: 12px;
-  }
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 22px 30px;
+    margin: 16px 20px;
+    background: var(--dark);
+    color: #ffffff;
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(32, 43, 36, 0.15);
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 750;
+}
+
+.header-content p {
+    margin: 3px 0 0;
+    color: #dce9df;
+    font-size: 0.9rem;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Navigatie gebruikt dezelfde stijl als de bestaande knoppen */
+.navigation a.btn {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navigation a.btn.active {
+    background: #0f6842;
+    border: 2px solid #ffffff;
+}
+
+.navigation a.btn:hover {
+    filter: brightness(1.12);
+}
+
 
   .mark {
     width: 40px;
@@ -522,4 +573,614 @@ textarea {
   .formrow {
     grid-template-columns: 65px 1fr;
   }
+}
+
+/* ========================================
+   INTERACTIEVE HOVER- EN FOCUS-EFFECTEN
+   ======================================== */
+
+/* Keuzevelden lichten subtiel op */
+.choice,
+.radio-card {
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.choice:hover,
+.radio-card:hover {
+    background-color: #D9F0ED;
+    border-color: #168C85;
+    transform: translateY(-2px);
+}
+
+/* Knoppen krijgen een visuele reactie */
+.btn {
+    transition:
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 4px 12px rgba(20, 45, 78, 0.16);
+    transform: translateY(-2px);
+}
+
+/* Duidelijke zichtbaarheid bij toetsenbordbediening */
+.choice:focus-within,
+.radio-card:focus-within,
+.btn:focus-visible {
+    outline: 3px solid #168C85;
+    outline-offset: 3px;
+}
+
+/* Respecteer gebruikers die minder beweging wensen */
+@media (prefers-reduced-motion: reduce) {
+    .choice,
+    .radio-card,
+    .btn {
+        transition: none;
+    }
+
+    .choice:hover,
+    .radio-card:hover,
+    .btn:hover {
+        transform: none;
+    }
+}
+
+
+/* ========================================
+   GAMEFLOW DASHBOARD
+   ======================================== */
+
+/* Algemene dashboardindeling */
+
+/* Dashboard gebruikt dezelfde buitenmaten als de spellenronde */
+.dashboard {
+    width: 100%;
+    max-width: 100%;
+    margin: 24px 0 0;
+    padding: 0;
+}
+
+/* Welkomstgedeelte */
+.dashboard-intro {
+    background: var(--card, #ffffff);
+    padding: 28px;
+    border-radius: 17px;
+    margin-bottom: 25px;
+    border: 1px solid var(--line, #d8e1d9);
+}
+
+.dashboard-intro h2 {
+    margin-top: 0;
+
+    background: var(--dark);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(32, 43, 36, 0.12);
+
+}
+
+/* Dashboardsecties */
+.dashboard-section {
+    margin-bottom: 30px;
+}
+
+.dashboard-section > h2 {
+    margin-bottom: 15px;
+}
+
+/* Raster voor de kaarten */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* Individuele dashboardkaarten */
+.dashboard-card {
+    background: var(--card, #ffffff);
+    border: 1px solid var(--line, #d8e1d9);
+    border-radius: 17px;
+    padding: 22px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    background: var(--pale);
+    border: 1px solid var(--line);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.dashboard-card h3 {
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.dashboard-card p {
+    margin-bottom: 0;
+}
+
+/* Hover-effect voor dashboardkaarten */
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent, #168c85);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Navigatie */
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: inherit;
+    padding: 9px 13px;
+    border-radius: 9px;
+    transition: background-color 0.25s ease;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Dashboard actieblok */
+.dashboard-action {
+    background: var(--card, #ffffff);
+    border: 1px solid var(--line, #d8e1d9);
+    border-radius: 17px;
+    padding: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Mobiele weergave */
+@media (max-width: 750px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 500px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navigation {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* GameFlow seizoensaccenten */
+
+.dashboard-section:nth-of-type(4) .dashboard-card {
+    background: var(--pale);
+    border-left: 5px solid var(--green);
+}
+
+.dashboard-card:hover {
+    background: #d5ecdd;
+    border-color: var(--green);
+}
+
+
+/* ========================================
+   GAMEFLOW - GEDEELDE HEADER
+   ======================================== */
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 22px;
+    background: var(--dark);
+    color: white;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(32, 43, 36, 0.12);
+}
+
+/* Logo */
+.mark {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    background: var(--green);
+    color: white;
+    border-radius: 14px;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+/* Merknaam */
+.brand {
+    flex: 1;
+    min-width: 180px;
+}
+
+.brand small {
+    color: #b6e6ca;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.brand h1 {
+    margin: 0;
+    color: white;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+
+/* Navigatie */
+.navigation {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.navigation a.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green);
+    color: white;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.navigation a.btn:hover {
+    background: #10643f;
+    transform: translateY(-2px);
+}
+
+/* Actieve pagina */
+.navigation a[aria-current="page"] {
+    background: #10643f;
+    border-color: #b6e6ca;
+}
+
+/* Instellingenknop */
+.header .outline {
+    background: transparent;
+    color: white;
+    border-color: #b6e6ca;
+}
+
+.header .outline:hover {
+    background: var(--green);
+}
+
+/* Dashboardheader buiten de .app-container */
+body > .header {
+    width: min(1180px, calc(100% - 32px));
+    margin: 24px auto 0;
+}
+
+/* Mobiele header */
+@media (max-width: 650px) {
+    .header {
+        flex-wrap: wrap;
+        padding: 16px;
+    }
+
+    .brand {
+        min-width: 0;
+    }
+
+    .navigation {
+        width: 100%;
+    }
+}
+
+
+/* GAMEFLOW MANAGEMENT CENTER */
+
+.dashboard-welcome {
+    padding: 8px 0;
+}
+
+.dashboard-intro {
+    background: var(--dark);
+    color: #ffffff;
+    padding: 28px;
+    border-radius: 17px;
+    margin-bottom: 25px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(32,43,36,.12);
+}
+
+.dashboard-intro .eyebrow {
+    color: #b6e6ca;
+}
+
+.dashboard-intro h2 {
+    margin: 8px 0;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+}
+
+.dashboard-intro p {
+    color: #dce9df;
+    margin-bottom: 18px;
+}
+
+.dashboard-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: #dce9df;
+    font-size: .9rem;
+}
+
+.dashboard-tag {
+    background: var(--green);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: 750;
+}
+
+.dashboard-value {
+    font-size: 1.8rem;
+    font-weight: 850;
+    color: var(--green);
+    margin-top: 8px;
+}
+
+.dashboard-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 17px;
+    padding: 22px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.04);
+    transition: transform .25s ease,
+                box-shadow .25s ease,
+                border-color .25s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--green);
+    box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}
+
+@media (max-width: 560px) {
+    .dashboard-intro {
+        padding: 20px;
+    }
+
+    .dashboard-card {
+        padding: 17px;
+    }
+}
+
+
+/* GAMEFLOW SEIZOENSOVERZICHT */
+
+.dashboard-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 16px;
+}
+
+.dashboard-heading h2 {
+    margin: 0;
+}
+
+.dashboard-counter {
+    padding: 7px 12px;
+    background: var(--pale);
+    color: var(--green);
+    border-radius: 999px;
+    font-size: .8rem;
+    font-weight: 800;
+}
+
+.season-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.season-card {
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 17px;
+    background: var(--card);
+    transition: transform .25s ease,
+                box-shadow .25s ease;
+}
+
+.season-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 18px rgba(0,0,0,.09);
+}
+
+.season-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.season-status {
+    display: block;
+    font-size: .67rem;
+    font-weight: 850;
+    letter-spacing: .08em;
+    margin-bottom: 7px;
+}
+
+.season-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.25rem;
+}
+
+.season-card p {
+    min-height: 66px;
+    margin: 0;
+    font-size: .85rem;
+    color: var(--muted);
+}
+
+.season-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0,0,0,.08);
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.spring {
+    background: #e6f4eb;
+    border-top: 4px solid #168253;
+}
+
+.spring .season-status {
+    color: #168253;
+}
+
+.summer {
+    background: #fff3d9;
+    border-top: 4px solid #d99b32;
+}
+
+.summer .season-status {
+    color: #a66a12;
+}
+
+.autumn {
+    background: #f5e9dc;
+    border-top: 4px solid #b76c37;
+}
+
+.autumn .season-status {
+    color: #a45b24;
+}
+
+.winter {
+    background: #e8eef5;
+    border-top: 4px solid #6685a5;
+}
+
+.winter .season-status {
+    color: #52718f;
+}
+
+@media (max-width: 900px) {
+    .season-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .season-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .season-card {
+        transition: none;
+    }
+
+    .season-card:hover {
+        transform: none;
+    }
+}
+
+
+/* GAMEFLOW KPI-OVERZICHT */
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.kpi-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 17px;
+    padding: 22px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .04);
+}
+
+.kpi-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.kpi-label {
+    font-weight: 700;
+    font-size: .95rem;
+}
+
+.kpi-value {
+    font-size: 2rem;
+    font-weight: 850;
+    color: var(--green);
+    margin: 16px 0 12px;
+}
+
+.kpi-track {
+    height: 11px;
+    background: #e8eee9;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.kpi-progress {
+    height: 100%;
+    background: var(--green);
+    border-radius: 999px;
+}
+
+.kpi-description {
+    color: var(--muted);
+    font-size: .85rem;
+    margin: 12px 0 0;
+}
+
+.dashboard-note {
+    color: var(--muted);
+    font-size: .8rem;
+    margin-top: 12px;
+}
+
+@media (max-width: 900px) {
+    .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
 }
