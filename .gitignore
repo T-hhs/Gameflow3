@@ -5,3 +5,4 @@
 *.exe
 backend/obj
 backend/bin
+backend/migrations/*
