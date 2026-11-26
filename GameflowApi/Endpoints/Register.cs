@@ -1,7 +1,5 @@
-using System.ComponentModel.DataAnnotations;
-using System.Reflection.Metadata.Ecma335;
-using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.Identity;
+using GameflowApi.DTOs;
 
 namespace GameflowApi.Endpoints;
 
@@ -10,21 +8,24 @@ public static class Register
     public static void MapRegisterEndpoint(this WebApplication app)
     {
         app.MapPost("/register", async (
-            UserManager<IdentityUser> userManager,
-            RegisterDto async dto =>
+            RegisterDto dto,
+            UserManager<IdentityUser> userManager) =>
+        {
+            var user = new IdentityUser
             {
-                var user = new IdentityUser
-                {
-                    UserName = dto.Gebruikersnaam
-                };
+                UserName = dto.Gebruikersnaam
+            };
 
-                var result = await userManager.CreateAsync(user, dto.Wachtwoord);
+            var result = await userManager.CreateAsync(user, dto.Wachtwoord);
 
-                if (!result.Succeeded)
-                {
-                    return Return.
-                }
+            if (!result.Succeeded)
+            {
+                return Results.BadRequest(result.Errors);
             }
-        ))
+
+            await userManager.AddToRoleAsync(user, dto.Rol);
+
+            return Results.Ok("Gebruiker geregistreerd");
+        });
     }
 }
