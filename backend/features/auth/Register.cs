@@ -28,7 +28,12 @@ public static class Register
                 return Results.BadRequest("Ongeldige rol.");
             }
 
-            await userManager.AddToRoleAsync(user, dto.Rol);
+            var roleResult = await userManager.AddToRoleAsync(user, dto.Rol);
+
+            if (!roleResult.Succeeded)
+            {
+                return Results.BadRequest(roleResult.Errors);
+            }
 
             return Results.Ok("Gebruiker geregistreerd");
         });

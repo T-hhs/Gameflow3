@@ -3,4 +3,12 @@
 GET {{backend_HostAddress}}/weatherforecast/
 Accept: application/json
 
+POST http://localhost:5240/register
+Content-Type: application/json
+
+{
+  "gebruikersnaam": "TeamA",
+  "wachtwoord": "Test123!",
+  "rol": "Team"
+}
 ###

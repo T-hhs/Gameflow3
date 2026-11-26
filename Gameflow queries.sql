@@ -21,5 +21,8 @@ JOIN Bepaling B
 ON S.supermarktnr = B.supermarktnr
 GROUP BY T.groepscode, T.teamnaam; */
 
+USE Gameflow3;
+GO
+
 SELECT *
 FROM AspNetRoles;

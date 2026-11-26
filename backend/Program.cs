@@ -70,4 +70,10 @@ app.MapAllTeamEndpoints();
 app.MapAllGameEndpoints();
 app.MapAllSmEndpoints();
 
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapRegisterEndpoint();
+app.MapLoginEndpoint();
+
 app.Run();
