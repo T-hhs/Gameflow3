@@ -1,10 +1,10 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
+namespace backend.data;
 
-
-
-
-public class gameflowDb : DbContext
+public class gameflowDb : IdentityDbContext<IdentityUser>
 {
     public gameflowDb(DbContextOptions<gameflowDb> options) : base(options)
     {}

@@ -1,14 +1,15 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using backend.data;
 
 namespace PortfolioBackend.Features.Blogs.GetBlog;
 
 public static class GetSmHandler
 {
     public static async Task<IResult> GetSmHandle(
-        int id, gameflowDb dbContext, CancellationToken cancellationToken)
+        int id, gameflowDb db, CancellationToken cancellationToken)
     {
-        var supermarkt = await dbContext.Supermarkt
+        var supermarkt = await db.Supermarkt
             .Where(sm => sm.Id == id)
             .Select(sm => new GetSmResponse(sm.Id, sm.Naam))
             .AsNoTracking()

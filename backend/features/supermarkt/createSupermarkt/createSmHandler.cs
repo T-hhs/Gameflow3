@@ -1,14 +1,14 @@
-
 using Microsoft.EntityFrameworkCore;
+using backend.data;
 
 public static class CreateSmHandler
 {
     public static async Task<IResult> CreateSmHandle(
-        CreateSmRequest request, gameflowDb dbContext, CancellationToken cancellationToken)
+        CreateSmRequest request, gameflowDb db, CancellationToken cancellationToken)
     {
         var supermarkt = new Supermarkt { Naam = request.Naam};
 
-        var team = await dbContext.Teams
+        var team = await db.Teams
             .FirstOrDefaultAsync(team => team.Id == request.team, cancellationToken);
 
         if (team is null)
@@ -16,8 +16,8 @@ public static class CreateSmHandler
             return TypedResults.BadRequest("No such team found");
         }
         
-        dbContext.Supermarkt.Add(supermarkt);
-        await dbContext.SaveChangesAsync(cancellationToken);
+        db.Supermarkt.Add(supermarkt);
+        await db.SaveChangesAsync(cancellationToken);
 
         var response = new CreateSmResponse(supermarkt.Id, supermarkt.Naam);
         
