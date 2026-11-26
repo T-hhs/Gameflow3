@@ -1,1 +1,8 @@
-.vs/
+.vscode/
+
+
+*.dll
+*.exe
+backend/obj/*
+backend/bin
+backend/migrations/*
