@@ -42,5 +42,6 @@ app.UseHttpsRedirection();
 
 app.MapAllTeamEndpoints();
 app.MapAllGameEndpoints();
+app.MapAllSmEndpoints();
 
 app.Run();
