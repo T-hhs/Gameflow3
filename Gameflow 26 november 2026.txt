@@ -16,3 +16,6 @@ Werken aan Excel voor berekeningen
 Een framework gebruiken voor ons project.
 
 Misschien net als Kahoot of Quizlet het spel maken.
+
+Burn down chart
+

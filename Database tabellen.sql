@@ -104,3 +104,18 @@ FOREIGN KEY (KPI_code) REFERENCES KPI(KPI_code)
 ON UPDATE CASCADE ON DELETE CASCADE,
 FOREIGN KEY (supermarktnr) REFERENCES Supermarkt(supermarktnr)
 ON UPDATE CASCADE ON DELETE CASCADE);
+
+INSERT INTO Spelleider VALUES 
+(1, 'Marijn', 'MR1234@$'),
+(2, 'Christian', 'CR41jgr'),
+(3, 'Jelle', 'JL43t89');
+
+INSERT INTO Serious_game VALUES
+('SG1', 1),
+('SG2', 2),
+('SG3', 3);
+
+INSERT INTO Event VALUES
+(),
+(),
+();
