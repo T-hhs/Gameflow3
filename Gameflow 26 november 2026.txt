@@ -19,3 +19,6 @@ Misschien net als Kahoot of Quizlet het spel maken.
 
 Burn down chart
 
+Voor nu:
+Backend werkend maken.
+Backend en Frontend aan elkaar verbinden.

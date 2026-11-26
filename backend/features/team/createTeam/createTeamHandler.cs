@@ -1,14 +1,14 @@
-
 using Microsoft.EntityFrameworkCore;
+using backend.data;
 
 public static class CreateTeamHandler
 {
     public static async Task<IResult> CreateTeamHandle(
-        CreateTeamRequest request, gameflowDb dbContext, CancellationToken cancellationToken)
+        CreateTeamRequest request, gameflowDb db, CancellationToken cancellationToken)
     {
         var team = new Team { Groepscode = request.Groepscode, Teamnaam = request.Teamnaam};
 
-        var game = await dbContext.Games
+        var game = await db.Games
             .FirstOrDefaultAsync(game => game.Id == request.game, cancellationToken);
 
         if (game is null)
@@ -16,8 +16,8 @@ public static class CreateTeamHandler
             return TypedResults.BadRequest("No such game found");
         }
         
-        dbContext.Teams.Add(team);
-        await dbContext.SaveChangesAsync(cancellationToken);
+        db.Teams.Add(team);
+        await db.SaveChangesAsync(cancellationToken);
 
         var response = new CreateTeamResponse(team.Id, team.Groepscode, team.Teamnaam);
         

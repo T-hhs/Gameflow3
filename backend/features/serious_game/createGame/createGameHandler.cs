@@ -1,15 +1,15 @@
-
 using Microsoft.EntityFrameworkCore;
+using backend.data;
 
 public static class CreateGameHandler
 {
     public static async Task<IResult> CreateGameHandle(
-        gameflowDb dbContext, CancellationToken cancellationToken)
+        gameflowDb db, CancellationToken cancellationToken)
     {
         var game = new Serious_game {};
         
-        dbContext.Games.Add(game);
-        await dbContext.SaveChangesAsync(cancellationToken);
+        db.Games.Add(game);
+        await db.SaveChangesAsync(cancellationToken);
         
         return TypedResults.CreatedAtRoute(
             routeName: "GetGame",

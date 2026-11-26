@@ -1,6 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.OpenApi;
+
+using backend.data;
+using backend.features.auth;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +21,12 @@ var connectionString =
 builder.Services.AddDbContext<gameflowDb>(options =>
     options.UseSqlServer(connectionString));
 
+builder.Services
+    .AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<gameflowDb>()
+    .AddDefaultTokenProviders();
+
+builder.Services.AddAuthorization();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -37,8 +47,24 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
+// Rollen aanmaken
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider
+        .GetRequiredService<RoleManager<IdentityRole>>();
 
+    string[] roles = { "Admin", "Spelleider", "Team" };
+
+    foreach (var role in roles)
+    {
+        if (!await roleManager.RoleExistsAsync(role))
+        {
+            await roleManager.CreateAsync(new IdentityRole(role));
+        }
+    }
+}
+
+// app.UseHttpsRedirection();
 
 app.MapAllTeamEndpoints();
 app.MapAllGameEndpoints();
