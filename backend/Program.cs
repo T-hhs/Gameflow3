@@ -68,5 +68,6 @@ using (var scope = app.Services.CreateScope())
 
 app.MapAllTeamEndpoints();
 app.MapAllGameEndpoints();
+app.MapAllSmEndpoints();
 
 app.Run();
