@@ -11,4 +11,6 @@ public sealed class Team
     public string Hint  {get; set;} = string.Empty;
 
     public int game {get; set;}
+
+    public int supermarkt  {get; set;}
 }

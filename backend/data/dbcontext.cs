@@ -11,4 +11,6 @@ public class gameflowDb : DbContext
     public DbSet<Team> Teams => Set<Team>();
 
     public DbSet<Serious_game> Games => Set<Serious_game>();
+
+    public DbSet<Supermarkt> Supermarkt => Set<Supermarkt>();
 }
