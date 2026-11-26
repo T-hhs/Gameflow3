@@ -4197,19 +4197,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jeted\\.nuget\\packages\\": {}
+    "C:\\Users\\tijke\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Jeted\\OneDrive\\Gameflow3\\backend\\backend.csproj",
+      "projectUniqueName": "C:\\Users\\tijke\\OneDrive\\Documents\\HBO-ICT\\SE3\\Project\\Gameflow3\\backend\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "c:\\Users\\Jeted\\OneDrive\\Gameflow3\\backend\\backend.csproj",
-      "packagesPath": "C:\\Users\\Jeted\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Jeted\\OneDrive\\Gameflow3\\backend\\obj\\",
+      "projectPath": "C:\\Users\\tijke\\OneDrive\\Documents\\HBO-ICT\\SE3\\Project\\Gameflow3\\backend\\backend.csproj",
+      "packagesPath": "C:\\Users\\tijke\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tijke\\OneDrive\\Documents\\HBO-ICT\\SE3\\Project\\Gameflow3\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Jeted\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\tijke\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
