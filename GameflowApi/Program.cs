@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+
+using GameflowApi.Endpoints;
 using GameflowApi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -46,9 +48,11 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapRegisterEndpoint();
 
 app.Run();

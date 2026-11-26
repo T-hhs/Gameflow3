@@ -3254,11 +3254,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Jeted\\OneDrive\\Gameflow3\\GameflowApi\\GameflowApi.csproj",
+      "projectUniqueName": "C:\\Users\\Jeted\\OneDrive\\Gameflow3\\GameflowApi\\GameflowApi.csproj",
       "projectName": "GameflowApi",
-      "projectPath": "c:\\Users\\Jeted\\OneDrive\\Gameflow3\\GameflowApi\\GameflowApi.csproj",
+      "projectPath": "C:\\Users\\Jeted\\OneDrive\\Gameflow3\\GameflowApi\\GameflowApi.csproj",
       "packagesPath": "C:\\Users\\Jeted\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Jeted\\OneDrive\\Gameflow3\\GameflowApi\\obj\\",
+      "outputPath": "C:\\Users\\Jeted\\OneDrive\\Gameflow3\\GameflowApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jeted\\AppData\\Roaming\\NuGet\\NuGet.Config"

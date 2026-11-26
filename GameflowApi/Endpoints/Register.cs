@@ -23,6 +23,11 @@ public static class Register
                 return Results.BadRequest(result.Errors);
             }
 
+            if (dto.Rol != "Team" && dto.Rol != "Spelleider")
+            {
+                return Results.BadRequest("Ongeldige rol.");
+            }
+
             await userManager.AddToRoleAsync(user, dto.Rol);
 
             return Results.Ok("Gebruiker geregistreerd");
