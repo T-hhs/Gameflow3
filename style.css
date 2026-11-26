@@ -1,31 +1,35 @@
 
+
 :root {
-  --bg: #f4f6f2;
-  --card: #fff;
-  --ink: #202421;
-  --muted: #68716a;
-  --line: #d8e1d9;
-  --green: #168253;
-  --pale: #e6f4eb;
-  --dark: #202b24;
+    --achtergrond: #f4f6f2;
+    --kaart: #ffffff;
+    --tekstkleur: #202421;
+    --gedempte-tekst: #68716a;
+    --randkleur: #d8e1d9;
+    --groen: #168253;
+    --lichtgroen: #e6f4eb;
+    --donkergroen: #202b24;
 }
 
+
+
+
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+    margin: 0;
+    background: var(--achtergrond);
+    color: var(--tekstkleur);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 button,
 input,
 select,
 textarea {
-  font: inherit;
+    font: inherit;
 }
 
 button,
@@ -33,7 +37,7 @@ a,
 select,
 input,
 textarea {
-  outline-offset: 3px;
+    outline-offset: 3px;
 }
 
 button:focus-visible,
@@ -41,547 +45,294 @@ a:focus-visible,
 select:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid #82cba5;
+    outline: 3px solid #82cba5;
 }
 
 [hidden] {
-  display: none !important;
-}
-
-.app {
-  max-width: 1180px;
-  width: calc(100% - 32px);
-  margin: 24px auto;
+    display: none !important;
 }
 
 
-.header {
+
+
+.toepassing {
+    max-width: 1180px;
+    width: calc(100% - 32px);
+    margin: 24px auto;
+}
+
+
+
+.koptekst {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 15px;
-    padding: 20px 28px;
-    background: var(--dark);
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 18px 22px;
+    background: var(--donkergroen);
     color: #ffffff;
-    border: none;
+    border: 1px solid var(--randkleur);
     border-radius: 18px;
-    box-shadow: 0 4px 12px rgba(32, 43, 36, 0.15);
+    box-shadow: 0 4px 12px rgba(32, 43, 36, 0.12);
+}
+
+.logo {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    background: var(--groen);
+    color: #ffffff;
+    border-radius: 14px;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+.merknaam {
+    flex: 1;
+    min-width: 180px;
+}
+
+.merknaam small {
+    display: block;
+    margin: 0 0 4px;
+    color: #b6e6ca;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.merknaam h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+
+.navigatie {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.navigatie a {
+    text-decoration: none;
+}
+
+.navigatie a[aria-current="page"] {
+    background: #10643f;
+    border-color: #b6e6ca;
 }
 
 
-.mark {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  background: #292d2a;
-  color: white;
-  border-radius: 14px;
-  font-size: 25px;
-  text-decoration: none;
+
+.knop {
+    min-height: 42px;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-weight: 750;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
 }
 
-.brand {
-  flex: 1;
+.primair {
+    background: var(--groen);
+    color: #ffffff;
 }
 
-.brand small,
-.eyebrow {
-  display: block;
-  margin: 0 0 4px;
-  color: var(--green);
-  font-size: .72rem;
-  font-weight: 800;
-  letter-spacing: .12em;
+.secundair,
+.omlijnd {
+    background: #ffffff;
+    color: var(--tekstkleur);
+    border-color: var(--randkleur);
 }
 
-.brand h1 {
-  margin: 0;
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
+.omlijnd {
+    background: transparent;
+    color: #ffffff;
+    border-color: #b6e6ca;
 }
 
-.btn {
-  min-height: 42px;
-  padding: 10px 16px;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  font-weight: 750;
-  cursor: pointer;
+.knop:hover {
+    box-shadow: 0 4px 12px rgba(20, 45, 78, 0.16);
+    transform: translateY(-2px);
 }
 
-.primary {
-  background: var(--green);
-  color: white;
+.primair:hover {
+    background: #10643f;
 }
 
-.secondary,
-.outline {
-  background: white;
-  color: var(--ink);
-  border-color: var(--line);
+.omlijnd:hover {
+    background: var(--groen);
 }
 
-.outline {
-  border-color: var(--green);
+.knop:focus-visible {
+    outline: 3px solid #168c85;
+    outline-offset: 3px;
 }
 
-.screen {
-  margin-top: 24px;
+
+
+
+.scherm {
+    margin-top: 24px;
 }
 
-.heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  margin: 0 2px 20px;
+.kop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 0 2px 20px;
 }
 
-.heading h2 {
-  margin: 0 0 5px;
-  font-size: clamp(1.7rem, 4vw, 2.2rem);
-  letter-spacing: -.04em;
+.kop h2 {
+    margin: 0 0 5px;
+    font-size: clamp(1.7rem, 4vw, 2.2rem);
+    letter-spacing: -0.04em;
 }
 
-.heading p {
-  margin: 0;
-  color: var(--muted);
+.kop p {
+    margin: 0;
+    color: var(--gedempte-tekst);
 }
 
-.pill {
-  padding: 7px 12px;
-  background: var(--pale);
-  color: #10643f;
-  border-radius: 999px;
-  font-size: .8rem;
-  font-weight: 800;
-  white-space: nowrap;
+.bovenlabel {
+    display: block;
+    margin: 0 0 4px;
+    color: var(--groen);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
 }
 
-.grid2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
+.label {
+    padding: 7px 12px;
+    background: var(--lichtgroen);
+    color: #10643f;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    white-space: nowrap;
 }
 
-.panel {
-  min-width: 0;
-  padding: 22px;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 17px;
+.gedempte-tekst {
+    color: var(--gedempte-tekst);
 }
 
-.panel h3 {
-  margin: 0 0 8px;
+
+
+
+.raster-twee-kolommen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
 }
 
-.muted {
-  color: var(--muted);
+.paneel {
+    min-width: 0;
+    padding: 22px;
+    background: var(--kaart);
+    border: 1px solid var(--randkleur);
+    border-radius: 17px;
 }
+
+.paneel h3 {
+    margin: 0 0 8px;
+}
+
+
+
 
 .teams {
-  display: grid;
-  gap: 10px;
-  margin-top: 15px;
+    display: grid;
+    gap: 10px;
+    margin-top: 15px;
 }
 
-.formrow {
-  display: grid;
-  grid-template-columns: 85px 1fr;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  font-weight: 700;
+.formulierregel {
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid var(--randkleur);
+    border-radius: 10px;
+    font-weight: 700;
 }
 
 select,
 textarea {
-  width: 100%;
-  padding: 10px;
-  background: white;
-  color: var(--ink);
-  border: 1px solid var(--line);
-  border-radius: 9px;
+    width: 100%;
+    padding: 10px;
+    background: #ffffff;
+    color: var(--tekstkleur);
+    border: 1px solid var(--randkleur);
+    border-radius: 9px;
 }
+
+
 
 .scenario {
-  display: flex;
-  gap: 12px;
-  margin-top: 10px;
-  padding: 13px;
-  background: var(--bg);
-  border-radius: 12px;
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    padding: 13px;
+    background: var(--achtergrond);
+    border-radius: 12px;
 }
 
-.num {
-  height: max-content;
-  padding: 5px 9px;
-  background: var(--pale);
-  color: #10643f;
-  border-radius: 8px;
-  font-weight: 800;
+.nummer {
+    height: max-content;
+    padding: 5px 9px;
+    background: var(--lichtgroen);
+    color: #10643f;
+    border-radius: 8px;
+    font-weight: 800;
 }
 
 .scenario h4,
 .scenario p {
-  margin: 0;
+    margin: 0;
 }
 
 .scenario p {
-  color: var(--muted);
-  font-size: .86rem;
+    color: var(--gedempte-tekst);
+    font-size: 0.86rem;
 }
 
-.actions {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.goalgrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.choice {
-  display: flex;
-  gap: 10px;
-  padding: 13px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-.choice:has(input:checked) {
-  background: var(--pale);
-  border-color: var(--green);
-}
-
-.choice input {
-  margin-top: 5px;
-  accent-color: var(--green);
-}
-
-.choice strong,
-.choice small {
-  display: block;
-}
-
-.choice small {
-  color: var(--muted);
-  font-size: .8rem;
-}
-
-.desc,
-.budget {
-  margin-top: 14px;
-  padding: 16px;
-  background: var(--bg);
-  border-radius: 12px;
-}
-
-.budget strong {
-  display: block;
-  font-size: 1.6rem;
-}
-
-.event {
-  padding: 20px;
-  background: #fff6df;
-  border: 1px solid #f0dfb2;
-  border-radius: 16px;
-}
-
-.kpis {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 16px;
-}
-
-.meter {
-  height: 8px;
-  margin: 14px 0 7px;
-  overflow: hidden;
-  background: #e9eee9;
-  border-radius: 99px;
-}
-
-.meter span {
-  display: block;
-  height: 100%;
-  background: var(--green);
-}
-
-.radio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-top: 14px;
-}
-
-.radio-card {
-  display: flex;
-  gap: 8px;
-  padding: 12px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-}
-
-.roundgrid {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 18px;
-}
-
-.leaderboard {
-  margin: 18px 0;
-  padding: 0;
-  list-style: none;
-}
-
-.leaderboard li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 3px;
-  border-bottom: 1px solid var(--line);
-}
-
-.rank {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  background: #edf2ed;
-  border-radius: 9px;
-  font-weight: 800;
-}
-
-.team {
-  flex: 1;
-  font-weight: 750;
-}
-
-.position {
-  padding: 14px;
-  background: var(--pale);
-  border-radius: 12px;
-}
-
-.score {
-  padding: 22px;
-  background: var(--dark);
-  color: white;
-  border-radius: 16px;
-}
-
-.score .eyebrow {
-  color: #b6e6ca;
-}
-
-.bigscore {
-  font-size: 3.7rem;
-  font-weight: 850;
-  letter-spacing: -.06em;
-  line-height: 1.2;
-}
-
-.hint {
-  min-height: 170px;
-  margin-top: 15px;
-}
-
-.summary {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 14px;
-  margin-top: 16px;
-}
-
-.result {
-  padding: 24px;
-  background: var(--dark);
-  color: white;
-  text-align: center;
-  border-radius: 16px;
-}
-
-.result .bigscore {
-  font-size: 4rem;
-}
-
-.settings {
-  max-width: 350px;
-  margin: 10px 0 0 auto;
-  padding: 16px;
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-}
-
-.footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 24px;
-  padding: 16px 2px;
-  color: var(--muted);
-  border-top: 1px solid var(--line);
-  font-size: .78rem;
-}
-
-.toast {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  max-width: 380px;
-  padding: 14px 18px;
-  background: var(--dark);
-  color: white;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px #0002;
-}
-
-.contrast {
-  --bg: #fff;
-  --card: #fff;
-  --ink: #000;
-  --muted: #333;
-  --line: #777;
-  --green: #006b3c;
-  --pale: #e2f3e8;
-}
-
-.spaced {
-  margin-top: 16px;
-}
-
-@media (max-width: 800px) {
-  .grid2,
-  .roundgrid {
-    grid-template-columns: 1fr;
-  }
-
-  .kpis,
-  .radio-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 560px) {
-  .app {
-    width: calc(100% - 18px);
-    margin: 9px auto;
-  }
 
 
-.header {
+
+.acties {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 22px 30px;
-    margin: 16px 20px;
-    background: var(--dark);
-    color: #ffffff;
-    border: none;
-    border-radius: 18px;
-    box-shadow: 0 5px 15px rgba(32, 43, 36, 0.15);
-}
-
-.header-content h1 {
-    margin: 0;
-    font-size: 1.8rem;
-    font-weight: 750;
-}
-
-.header-content p {
-    margin: 3px 0 0;
-    color: #dce9df;
-    font-size: 0.9rem;
-}
-
-.navigation {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
     gap: 12px;
-}
-
-/* Navigatie gebruikt dezelfde stijl als de bestaande knoppen */
-.navigation a.btn {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.navigation a.btn.active {
-    background: #0f6842;
-    border: 2px solid #ffffff;
-}
-
-.navigation a.btn:hover {
-    filter: brightness(1.12);
+    margin-top: 20px;
 }
 
 
-  .mark {
-    width: 40px;
-    height: 40px;
-  }
 
-  .header .btn {
-    padding: 8px;
-    font-size: .8rem;
-  }
-
-  .heading {
-    flex-direction: column;
-  }
-
-  .panel {
-    padding: 16px;
-  }
-
-  .goalgrid {
-    grid-template-columns: 1fr;
-  }
-
-  .actions,
-  .summary {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .actions .btn,
-  .summary .btn {
-    width: 100%;
-  }
-
-  .footer {
-    flex-direction: column;
-  }
-
-  .formrow {
-    grid-template-columns: 65px 1fr;
-  }
+.doelenraster {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
 }
 
-/* ========================================
-   INTERACTIEVE HOVER- EN FOCUS-EFFECTEN
-   ======================================== */
-
-/* Keuzevelden lichten subtiel op */
-.choice,
-.radio-card {
+.keuze {
+    display: flex;
+    gap: 10px;
+    padding: 13px;
+    border: 1px solid var(--randkleur);
+    border-radius: 12px;
+    cursor: pointer;
     transition:
         background-color 0.25s ease,
         border-color 0.25s ease,
@@ -589,109 +340,337 @@ textarea {
         transform 0.25s ease;
 }
 
-.choice:hover,
-.radio-card:hover {
-    background-color: #D9F0ED;
-    border-color: #168C85;
-    transform: translateY(-2px);
+.keuze:has(input:checked) {
+    background: var(--lichtgroen);
+    border-color: var(--groen);
 }
 
-/* Knoppen krijgen een visuele reactie */
-.btn {
+.keuze input {
+    margin-top: 5px;
+    accent-color: var(--groen);
+}
+
+.keuze strong,
+.keuze small {
+    display: block;
+}
+
+.keuze small {
+    color: var(--gedempte-tekst);
+    font-size: 0.8rem;
+}
+
+
+.beschrijving,
+.budget {
+    margin-top: 14px;
+    padding: 16px;
+    background: var(--achtergrond);
+    border-radius: 12px;
+}
+
+.budget strong {
+    display: block;
+    font-size: 1.6rem;
+}
+
+
+
+
+.gebeurtenis {
+    padding: 20px;
+    background: #fff6df;
+    border: 1px solid #f0dfb2;
+    border-radius: 16px;
+}
+
+
+
+.prestatie-indicatoren {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.meter {
+    height: 8px;
+    margin: 14px 0 7px;
+    overflow: hidden;
+    background: #e9eee9;
+    border-radius: 99px;
+}
+
+.meter span {
+    display: block;
+    height: 100%;
+    background: var(--groen);
+}
+
+
+
+
+.keuzeraster {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.keuzekaart {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    border: 1px solid var(--randkleur);
+    border-radius: 12px;
+    cursor: pointer;
     transition:
         background-color 0.25s ease,
+        border-color 0.25s ease,
         box-shadow 0.25s ease,
         transform 0.25s ease;
 }
 
-.btn:hover {
-    box-shadow: 0 4px 12px rgba(20, 45, 78, 0.16);
+
+.ronderaster {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 18px;
+}
+
+.teamranglijst {
+    margin: 18px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.teamranglijst li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 3px;
+    border-bottom: 1px solid var(--randkleur);
+}
+
+.rangnummer {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    background: #edf2ed;
+    border-radius: 9px;
+    font-weight: 800;
+}
+
+.teamnaam {
+    flex: 1;
+    font-weight: 750;
+}
+
+.teampositie {
+    padding: 14px;
+    background: var(--lichtgroen);
+    border-radius: 12px;
+}
+
+
+
+.scorekaart {
+    padding: 22px;
+    background: var(--donkergroen);
+    color: #ffffff;
+    border-radius: 16px;
+}
+
+.scorekaart .bovenlabel {
+    color: #b6e6ca;
+}
+
+.grote-score {
+    font-size: 3.7rem;
+    font-weight: 850;
+    letter-spacing: -0.06em;
+    line-height: 1.2;
+}
+
+.aanwijzing {
+    min-height: 170px;
+    margin-top: 15px;
+}
+
+
+
+.samenvatting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.resultaat {
+    padding: 24px;
+    background: var(--donkergroen);
+    color: #ffffff;
+    text-align: center;
+    border-radius: 16px;
+}
+
+.resultaat .grote-score {
+    font-size: 4rem;
+}
+
+
+.instellingen {
+    max-width: 350px;
+    margin: 10px 0 0 auto;
+    padding: 16px;
+    background: #ffffff;
+    border: 1px solid var(--randkleur);
+    border-radius: 14px;
+}
+
+
+
+.voettekst {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 24px;
+    padding: 16px 2px;
+    color: var(--gedempte-tekst);
+    border-top: 1px solid var(--randkleur);
+    font-size: 0.78rem;
+}
+
+.melding {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    max-width: 380px;
+    padding: 14px 18px;
+    background: var(--donkergroen);
+    color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px #0002;
+}
+
+
+
+.hoog-contrast {
+    --achtergrond: #ffffff;
+    --kaart: #ffffff;
+    --tekstkleur: #000000;
+    --gedempte-tekst: #333333;
+    --randkleur: #777777;
+    --groen: #006b3c;
+    --lichtgroen: #e2f3e8;
+}
+
+
+
+.extra-afstand {
+    margin-top: 16px;
+}
+
+
+
+.keuze:hover,
+.keuzekaart:hover {
+    background-color: #d9f0ed;
+    border-color: #168c85;
     transform: translateY(-2px);
 }
 
-/* Duidelijke zichtbaarheid bij toetsenbordbediening */
-.choice:focus-within,
-.radio-card:focus-within,
-.btn:focus-visible {
-    outline: 3px solid #168C85;
+.keuze:focus-within,
+.keuzekaart:focus-within {
+    outline: 3px solid #168c85;
     outline-offset: 3px;
 }
 
-/* Respecteer gebruikers die minder beweging wensen */
-@media (prefers-reduced-motion: reduce) {
-    .choice,
-    .radio-card,
-    .btn {
-        transition: none;
-    }
-
-    .choice:hover,
-    .radio-card:hover,
-    .btn:hover {
-        transform: none;
-    }
-}
 
 
-/* ========================================
-   GAMEFLOW DASHBOARD
-   ======================================== */
 
-/* Algemene dashboardindeling */
-
-/* Dashboard gebruikt dezelfde buitenmaten als de spellenronde */
-.dashboard {
+.overzichtspagina {
     width: 100%;
     max-width: 100%;
     margin: 24px 0 0;
     padding: 0;
 }
 
-/* Welkomstgedeelte */
-.dashboard-intro {
-    background: var(--card, #ffffff);
+
+
+
+.overzicht-intro {
+    background: var(--donkergroen);
+    color: #ffffff;
     padding: 28px;
     border-radius: 17px;
     margin-bottom: 25px;
-    border: 1px solid var(--line, #d8e1d9);
-}
-
-.dashboard-intro h2 {
-    margin-top: 0;
-
-    background: var(--dark);
-    color: #ffffff;
     border: none;
     box-shadow: 0 4px 12px rgba(32, 43, 36, 0.12);
-
 }
 
-/* Dashboardsecties */
-.dashboard-section {
+.overzicht-welkom {
+    padding: 8px 0;
+}
+
+.overzicht-intro .bovenlabel {
+    color: #b6e6ca;
+}
+
+.overzicht-intro h2 {
+    margin: 8px 0;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+}
+
+.overzicht-intro p {
+    color: #dce9df;
+    margin-bottom: 18px;
+}
+
+.overzicht-gegevens {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: #dce9df;
+    font-size: 0.9rem;
+}
+
+.overzicht-label {
+    background: var(--groen);
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: 750;
+}
+
+
+
+.overzicht-onderdeel {
     margin-bottom: 30px;
 }
 
-.dashboard-section > h2 {
+.overzicht-onderdeel > h2 {
     margin-bottom: 15px;
 }
 
-/* Raster voor de kaarten */
-.dashboard-grid {
+
+
+.overzicht-raster {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 18px;
 }
 
-/* Individuele dashboardkaarten */
-.dashboard-card {
-    background: var(--card, #ffffff);
-    border: 1px solid var(--line, #d8e1d9);
+.overzicht-kaart {
+    min-width: 0;
+    background: var(--kaart);
+    border: 1px solid var(--randkleur);
     border-radius: 17px;
     padding: 22px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
-    background: var(--pale);
-    border: 1px solid var(--line);
-
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease,
@@ -699,281 +678,43 @@ textarea {
         background-color 0.25s ease;
 }
 
-.dashboard-card h3 {
+.overzicht-kaart h3 {
     margin-top: 0;
     font-size: 1rem;
 }
 
-.dashboard-card p {
+.overzicht-kaart p {
     margin-bottom: 0;
 }
 
-/* Hover-effect voor dashboardkaarten */
-.dashboard-card:hover {
+.overzicht-kaart:hover {
     transform: translateY(-3px);
-    border-color: var(--accent, #168c85);
+    border-color: var(--groen);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* Navigatie */
-.navigation {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+.overzicht-waarde {
+    font-size: 1.8rem;
+    font-weight: 850;
+    color: var(--groen);
+    margin-top: 8px;
 }
 
-.navigation a {
-    text-decoration: none;
-    color: inherit;
-    padding: 9px 13px;
-    border-radius: 9px;
-    transition: background-color 0.25s ease;
-}
 
-.navigation a:hover,
-.navigation a.active {
-    background-color: rgba(255, 255, 255, 0.18);
-}
 
-/* Dashboard actieblok */
-.dashboard-action {
-    background: var(--card, #ffffff);
-    border: 1px solid var(--line, #d8e1d9);
+
+.overzicht-actie {
+    background: var(--kaart);
+    border: 1px solid var(--randkleur);
     border-radius: 17px;
     padding: 28px;
     margin-bottom: 30px;
     text-align: center;
 }
 
-/* Mobiele weergave */
-@media (max-width: 750px) {
-    .dashboard-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 500px) {
-    .dashboard-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .navigation {
-        flex-wrap: wrap;
-    }
-}
 
 
-/* GameFlow seizoensaccenten */
-
-.dashboard-section:nth-of-type(4) .dashboard-card {
-    background: var(--pale);
-    border-left: 5px solid var(--green);
-}
-
-.dashboard-card:hover {
-    background: #d5ecdd;
-    border-color: var(--green);
-}
-
-
-/* ========================================
-   GAMEFLOW - GEDEELDE HEADER
-   ======================================== */
-
-.header {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    padding: 18px 22px;
-    background: var(--dark);
-    color: white;
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    box-shadow: 0 4px 12px rgba(32, 43, 36, 0.12);
-}
-
-/* Logo */
-.mark {
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    display: grid;
-    place-items: center;
-    background: var(--green);
-    color: white;
-    border-radius: 14px;
-    font-size: 26px;
-    text-decoration: none;
-}
-
-/* Merknaam */
-.brand {
-    flex: 1;
-    min-width: 180px;
-}
-
-.brand small {
-    color: #b6e6ca;
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-}
-
-.brand h1 {
-    margin: 0;
-    color: white;
-    font-size: clamp(1rem, 2.5vw, 1.3rem);
-}
-
-/* Navigatie */
-.navigation {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.navigation a.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--green);
-    color: white;
-    text-decoration: none;
-    border: 1px solid transparent;
-    transition: background-color 0.25s ease, transform 0.25s ease;
-}
-
-.navigation a.btn:hover {
-    background: #10643f;
-    transform: translateY(-2px);
-}
-
-/* Actieve pagina */
-.navigation a[aria-current="page"] {
-    background: #10643f;
-    border-color: #b6e6ca;
-}
-
-/* Instellingenknop */
-.header .outline {
-    background: transparent;
-    color: white;
-    border-color: #b6e6ca;
-}
-
-.header .outline:hover {
-    background: var(--green);
-}
-
-/* Dashboardheader buiten de .app-container */
-body > .header {
-    width: min(1180px, calc(100% - 32px));
-    margin: 24px auto 0;
-}
-
-/* Mobiele header */
-@media (max-width: 650px) {
-    .header {
-        flex-wrap: wrap;
-        padding: 16px;
-    }
-
-    .brand {
-        min-width: 0;
-    }
-
-    .navigation {
-        width: 100%;
-    }
-}
-
-
-/* GAMEFLOW MANAGEMENT CENTER */
-
-.dashboard-welcome {
-    padding: 8px 0;
-}
-
-.dashboard-intro {
-    background: var(--dark);
-    color: #ffffff;
-    padding: 28px;
-    border-radius: 17px;
-    margin-bottom: 25px;
-    border: none;
-    box-shadow: 0 4px 12px rgba(32,43,36,.12);
-}
-
-.dashboard-intro .eyebrow {
-    color: #b6e6ca;
-}
-
-.dashboard-intro h2 {
-    margin: 8px 0;
-    font-size: clamp(1.7rem, 4vw, 2.3rem);
-}
-
-.dashboard-intro p {
-    color: #dce9df;
-    margin-bottom: 18px;
-}
-
-.dashboard-meta {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    color: #dce9df;
-    font-size: .9rem;
-}
-
-.dashboard-tag {
-    background: var(--green);
-    color: white;
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-weight: 750;
-}
-
-.dashboard-value {
-    font-size: 1.8rem;
-    font-weight: 850;
-    color: var(--green);
-    margin-top: 8px;
-}
-
-.dashboard-card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 17px;
-    padding: 22px;
-    box-shadow: 0 3px 10px rgba(0,0,0,.04);
-    transition: transform .25s ease,
-                box-shadow .25s ease,
-                border-color .25s ease;
-}
-
-.dashboard-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--green);
-    box-shadow: 0 6px 16px rgba(0,0,0,.08);
-}
-
-@media (max-width: 560px) {
-    .dashboard-intro {
-        padding: 20px;
-    }
-
-    .dashboard-card {
-        padding: 17px;
-    }
-}
-
-
-/* GAMEFLOW SEIZOENSOVERZICHT */
-
-.dashboard-heading {
+.overzicht-kop {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -981,99 +722,105 @@ body > .header {
     margin-bottom: 16px;
 }
 
-.dashboard-heading h2 {
+.overzicht-kop h2 {
     margin: 0;
 }
 
-.dashboard-counter {
+.overzicht-teller {
     padding: 7px 12px;
-    background: var(--pale);
-    color: var(--green);
+    background: var(--lichtgroen);
+    color: var(--groen);
     border-radius: 999px;
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-weight: 800;
 }
 
-.season-grid {
+
+
+
+.seizoenenraster {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 16px;
 }
 
-.season-card {
+.seizoenskaart {
     padding: 20px;
-    border: 1px solid var(--line);
+    border: 1px solid var(--randkleur);
     border-radius: 17px;
-    background: var(--card);
-    transition: transform .25s ease,
-                box-shadow .25s ease;
+    background: var(--kaart);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-.season-card:hover {
+.seizoenskaart:hover {
     transform: translateY(-4px);
-    box-shadow: 0 7px 18px rgba(0,0,0,.09);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.09);
 }
 
-.season-icon {
+.seizoensicoon {
     font-size: 2rem;
     margin-bottom: 12px;
 }
 
-.season-status {
+.seizoensstatus {
     display: block;
-    font-size: .67rem;
+    font-size: 0.67rem;
     font-weight: 850;
-    letter-spacing: .08em;
+    letter-spacing: 0.08em;
     margin-bottom: 7px;
 }
 
-.season-card h3 {
+.seizoenskaart h3 {
     margin: 0 0 8px;
     font-size: 1.25rem;
 }
 
-.season-card p {
+.seizoenskaart p {
     min-height: 66px;
     margin: 0;
-    font-size: .85rem;
-    color: var(--muted);
+    font-size: 0.85rem;
+    color: var(--gedempte-tekst);
 }
 
-.season-footer {
+.seizoensvoetregel {
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin-top: 16px;
     padding-top: 12px;
-    border-top: 1px solid rgba(0,0,0,.08);
-    font-size: .75rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 0.75rem;
     font-weight: 700;
 }
 
-.spring {
+
+
+.lente {
     background: #e6f4eb;
     border-top: 4px solid #168253;
 }
 
-.spring .season-status {
+.lente .seizoensstatus {
     color: #168253;
 }
 
-.summer {
+.zomer {
     background: #fff3d9;
     border-top: 4px solid #d99b32;
 }
 
-.summer .season-status {
+.zomer .seizoensstatus {
     color: #a66a12;
 }
 
-.autumn {
+.herfst {
     background: #f5e9dc;
     border-top: 4px solid #b76c37;
 }
 
-.autumn .season-status {
+.herfst .seizoensstatus {
     color: #a45b24;
 }
 
@@ -1082,105 +829,208 @@ body > .header {
     border-top: 4px solid #6685a5;
 }
 
-.winter .season-status {
+.winter .seizoensstatus {
     color: #52718f;
 }
 
-@media (max-width: 900px) {
-    .season-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 560px) {
-    .season-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .dashboard-heading {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .season-card {
-        transition: none;
-    }
-
-    .season-card:hover {
-        transform: none;
-    }
+.actief-seizoen {
+    box-shadow: 0 0 0 2px var(--groen);
 }
 
 
-/* GAMEFLOW KPI-OVERZICHT */
 
-.kpi-grid {
+
+.prestatie-indicatoren-raster {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
 }
 
-.kpi-card {
-    background: var(--card);
-    border: 1px solid var(--line);
+.prestatie-indicator-kaart {
+    background: var(--kaart);
+    border: 1px solid var(--randkleur);
     border-radius: 17px;
     padding: 22px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, .04);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
 }
 
-.kpi-header {
+.prestatie-indicator-kop {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-.kpi-label {
+.prestatie-indicator-label {
     font-weight: 700;
-    font-size: .95rem;
+    font-size: 0.95rem;
 }
 
-.kpi-value {
+.prestatie-indicator-waarde {
     font-size: 2rem;
     font-weight: 850;
-    color: var(--green);
+    color: var(--groen);
     margin: 16px 0 12px;
 }
 
-.kpi-track {
+.prestatie-indicator-balk {
     height: 11px;
     background: #e8eee9;
     border-radius: 999px;
     overflow: hidden;
 }
 
-.kpi-progress {
+.prestatie-indicator-voortgang {
     height: 100%;
-    background: var(--green);
+    background: var(--groen);
     border-radius: 999px;
 }
 
-.kpi-description {
-    color: var(--muted);
-    font-size: .85rem;
+.prestatie-indicator-beschrijving {
+    color: var(--gedempte-tekst);
+    font-size: 0.85rem;
     margin: 12px 0 0;
 }
 
-.dashboard-note {
-    color: var(--muted);
-    font-size: .8rem;
+.overzicht-opmerking {
+    color: var(--gedempte-tekst);
+    font-size: 0.8rem;
     margin-top: 12px;
 }
 
+
+
+
 @media (max-width: 900px) {
-    .kpi-grid {
+
+    .prestatie-indicatoren {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .seizoenenraster {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .prestatie-indicatoren-raster {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-@media (max-width: 560px) {
-    .kpi-grid {
+
+@media (max-width: 800px) {
+
+    .raster-twee-kolommen,
+    .ronderaster {
         grid-template-columns: 1fr;
+    }
+
+    .keuzeraster {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .koptekst {
+        flex-wrap: wrap;
+        padding: 16px;
+    }
+
+    .merknaam {
+        min-width: 0;
+    }
+
+    .navigatie {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .toepassing {
+        width: calc(100% - 18px);
+        margin: 9px auto;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .koptekst .knop {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+
+    .kop {
+        flex-direction: column;
+    }
+
+    .paneel {
+        padding: 16px;
+    }
+
+    .doelenraster {
+        grid-template-columns: 1fr;
+    }
+
+    .acties,
+    .samenvatting {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .acties .knop,
+    .samenvatting .knop {
+        width: 100%;
+    }
+
+    .voettekst {
+        flex-direction: column;
+    }
+
+    .formulierregel {
+        grid-template-columns: 65px 1fr;
+    }
+
+    .overzicht-intro {
+        padding: 20px;
+    }
+
+    .overzicht-kaart {
+        padding: 17px;
+    }
+
+    .seizoenenraster,
+    .prestatie-indicatoren-raster {
+        grid-template-columns: 1fr;
+    }
+
+    .overzicht-kop {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .keuze,
+    .keuzekaart,
+    .knop,
+    .seizoenskaart,
+    .overzicht-kaart {
+        transition: none;
+    }
+
+    .keuze:hover,
+    .keuzekaart:hover,
+    .knop:hover,
+    .seizoenskaart:hover,
+    .overzicht-kaart:hover {
+        transform: none;
     }
 }
