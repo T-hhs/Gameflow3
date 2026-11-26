@@ -1,0 +1,1036 @@
+
+
+:root {
+    --achtergrond: #f4f6f2;
+    --kaart: #ffffff;
+    --tekstkleur: #202421;
+    --gedempte-tekst: #68716a;
+    --randkleur: #d8e1d9;
+    --groen: #168253;
+    --lichtgroen: #e6f4eb;
+    --donkergroen: #202b24;
+}
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--achtergrond);
+    color: var(--tekstkleur);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button,
+a,
+select,
+input,
+textarea {
+    outline-offset: 3px;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #82cba5;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+
+
+.toepassing {
+    max-width: 1180px;
+    width: calc(100% - 32px);
+    margin: 24px auto;
+}
+
+
+
+.koptekst {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 18px 22px;
+    background: var(--donkergroen);
+    color: #ffffff;
+    border: 1px solid var(--randkleur);
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(32, 43, 36, 0.12);
+}
+
+.logo {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    background: var(--groen);
+    color: #ffffff;
+    border-radius: 14px;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+.merknaam {
+    flex: 1;
+    min-width: 180px;
+}
+
+.merknaam small {
+    display: block;
+    margin: 0 0 4px;
+    color: #b6e6ca;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.merknaam h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+
+.navigatie {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.navigatie a {
+    text-decoration: none;
+}
+
+.navigatie a[aria-current="page"] {
+    background: #10643f;
+    border-color: #b6e6ca;
+}
+
+
+
+.knop {
+    min-height: 42px;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-weight: 750;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.primair {
+    background: var(--groen);
+    color: #ffffff;
+}
+
+.secundair,
+.omlijnd {
+    background: #ffffff;
+    color: var(--tekstkleur);
+    border-color: var(--randkleur);
+}
+
+.omlijnd {
+    background: transparent;
+    color: #ffffff;
+    border-color: #b6e6ca;
+}
+
+.knop:hover {
+    box-shadow: 0 4px 12px rgba(20, 45, 78, 0.16);
+    transform: translateY(-2px);
+}
+
+.primair:hover {
+    background: #10643f;
+}
+
+.omlijnd:hover {
+    background: var(--groen);
+}
+
+.knop:focus-visible {
+    outline: 3px solid #168c85;
+    outline-offset: 3px;
+}
+
+
+
+
+.scherm {
+    margin-top: 24px;
+}
+
+.kop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 0 2px 20px;
+}
+
+.kop h2 {
+    margin: 0 0 5px;
+    font-size: clamp(1.7rem, 4vw, 2.2rem);
+    letter-spacing: -0.04em;
+}
+
+.kop p {
+    margin: 0;
+    color: var(--gedempte-tekst);
+}
+
+.bovenlabel {
+    display: block;
+    margin: 0 0 4px;
+    color: var(--groen);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.label {
+    padding: 7px 12px;
+    background: var(--lichtgroen);
+    color: #10643f;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.gedempte-tekst {
+    color: var(--gedempte-tekst);
+}
+
+
+
+
+.raster-twee-kolommen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.paneel {
+    min-width: 0;
+    padding: 22px;
+    background: var(--kaart);
+    border: 1px solid var(--randkleur);
+    border-radius: 17px;
+}
+
+.paneel h3 {
+    margin: 0 0 8px;
+}
+
+
+
+
+.teams {
+    display: grid;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.formulierregel {
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid var(--randkleur);
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    background: #ffffff;
+    color: var(--tekstkleur);
+    border: 1px solid var(--randkleur);
+    border-radius: 9px;
+}
+
+
+
+.scenario {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    padding: 13px;
+    background: var(--achtergrond);
+    border-radius: 12px;
+}
+
+.nummer {
+    height: max-content;
+    padding: 5px 9px;
+    background: var(--lichtgroen);
+    color: #10643f;
+    border-radius: 8px;
+    font-weight: 800;
+}
+
+.scenario h4,
+.scenario p {
+    margin: 0;
+}
+
+.scenario p {
+    color: var(--gedempte-tekst);
+    font-size: 0.86rem;
+}
+
+
+
+
+.acties {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+
+
+.doelenraster {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.keuze {
+    display: flex;
+    gap: 10px;
+    padding: 13px;
+    border: 1px solid var(--randkleur);
+    border-radius: 12px;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.keuze:has(input:checked) {
+    background: var(--lichtgroen);
+    border-color: var(--groen);
+}
+
+.keuze input {
+    margin-top: 5px;
+    accent-color: var(--groen);
+}
+
+.keuze strong,
+.keuze small {
+    display: block;
+}
+
+.keuze small {
+    color: var(--gedempte-tekst);
+    font-size: 0.8rem;
+}
+
+
+.beschrijving,
+.budget {
+    margin-top: 14px;
+    padding: 16px;
+    background: var(--achtergrond);
+    border-radius: 12px;
+}
+
+.budget strong {
+    display: block;
+    font-size: 1.6rem;
+}
+
+
+
+
+.gebeurtenis {
+    padding: 20px;
+    background: #fff6df;
+    border: 1px solid #f0dfb2;
+    border-radius: 16px;
+}
+
+
+
+.prestatie-indicatoren {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.meter {
+    height: 8px;
+    margin: 14px 0 7px;
+    overflow: hidden;
+    background: #e9eee9;
+    border-radius: 99px;
+}
+
+.meter span {
+    display: block;
+    height: 100%;
+    background: var(--groen);
+}
+
+
+
+
+.keuzeraster {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.keuzekaart {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    border: 1px solid var(--randkleur);
+    border-radius: 12px;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.ronderaster {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 18px;
+}
+
+.teamranglijst {
+    margin: 18px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.teamranglijst li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 3px;
+    border-bottom: 1px solid var(--randkleur);
+}
+
+.rangnummer {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    background: #edf2ed;
+    border-radius: 9px;
+    font-weight: 800;
+}
+
+.teamnaam {
+    flex: 1;
+    font-weight: 750;
+}
+
+.teampositie {
+    padding: 14px;
+    background: var(--lichtgroen);
+    border-radius: 12px;
+}
+
+
+
+.scorekaart {
+    padding: 22px;
+    background: var(--donkergroen);
+    color: #ffffff;
+    border-radius: 16px;
+}
+
+.scorekaart .bovenlabel {
+    color: #b6e6ca;
+}
+
+.grote-score {
+    font-size: 3.7rem;
+    font-weight: 850;
+    letter-spacing: -0.06em;
+    line-height: 1.2;
+}
+
+.aanwijzing {
+    min-height: 170px;
+    margin-top: 15px;
+}
+
+
+
+.samenvatting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.resultaat {
+    padding: 24px;
+    background: var(--donkergroen);
+    color: #ffffff;
+    text-align: center;
+    border-radius: 16px;
+}
+
+.resultaat .grote-score {
+    font-size: 4rem;
+}
+
+
+.instellingen {
+    max-width: 350px;
+    margin: 10px 0 0 auto;
+    padding: 16px;
+    background: #ffffff;
+    border: 1px solid var(--randkleur);
+    border-radius: 14px;
+}
+
+
+
+.voettekst {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 24px;
+    padding: 16px 2px;
+    color: var(--gedempte-tekst);
+    border-top: 1px solid var(--randkleur);
+    font-size: 0.78rem;
+}
+
+.melding {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    max-width: 380px;
+    padding: 14px 18px;
+    background: var(--donkergroen);
+    color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px #0002;
+}
+
+
+
+.hoog-contrast {
+    --achtergrond: #ffffff;
+    --kaart: #ffffff;
+    --tekstkleur: #000000;
+    --gedempte-tekst: #333333;
+    --randkleur: #777777;
+    --groen: #006b3c;
+    --lichtgroen: #e2f3e8;
+}
+
+
+
+.extra-afstand {
+    margin-top: 16px;
+}
+
+
+
+.keuze:hover,
+.keuzekaart:hover {
+    background-color: #d9f0ed;
+    border-color: #168c85;
+    transform: translateY(-2px);
+}
+
+.keuze:focus-within,
+.keuzekaart:focus-within {
+    outline: 3px solid #168c85;
+    outline-offset: 3px;
+}
+
+
+
+
+.overzichtspagina {
+    width: 100%;
+    max-width: 100%;
+    margin: 24px 0 0;
+    padding: 0;
+}
+
+
+
+
+.overzicht-intro {
+    background: var(--donkergroen);
+    color: #ffffff;
+    padding: 28px;
+    border-radius: 17px;
+    margin-bottom: 25px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(32, 43, 36, 0.12);
+}
+
+.overzicht-welkom {
+    padding: 8px 0;
+}
+
+.overzicht-intro .bovenlabel {
+    color: #b6e6ca;
+}
+
+.overzicht-intro h2 {
+    margin: 8px 0;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+}
+
+.overzicht-intro p {
+    color: #dce9df;
+    margin-bottom: 18px;
+}
+
+.overzicht-gegevens {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: #dce9df;
+    font-size: 0.9rem;
+}
+
+.overzicht-label {
+    background: var(--groen);
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: 750;
+}
+
+
+
+.overzicht-onderdeel {
+    margin-bottom: 30px;
+}
+
+.overzicht-onderdeel > h2 {
+    margin-bottom: 15px;
+}
+
+
+
+.overzicht-raster {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.overzicht-kaart {
+    min-width: 0;
+    background: var(--kaart);
+    border: 1px solid var(--randkleur);
+    border-radius: 17px;
+    padding: 22px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.overzicht-kaart h3 {
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.overzicht-kaart p {
+    margin-bottom: 0;
+}
+
+.overzicht-kaart:hover {
+    transform: translateY(-3px);
+    border-color: var(--groen);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.overzicht-waarde {
+    font-size: 1.8rem;
+    font-weight: 850;
+    color: var(--groen);
+    margin-top: 8px;
+}
+
+
+
+
+.overzicht-actie {
+    background: var(--kaart);
+    border: 1px solid var(--randkleur);
+    border-radius: 17px;
+    padding: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+
+.overzicht-kop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 16px;
+}
+
+.overzicht-kop h2 {
+    margin: 0;
+}
+
+.overzicht-teller {
+    padding: 7px 12px;
+    background: var(--lichtgroen);
+    color: var(--groen);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+
+
+
+.seizoenenraster {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.seizoenskaart {
+    padding: 20px;
+    border: 1px solid var(--randkleur);
+    border-radius: 17px;
+    background: var(--kaart);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.seizoenskaart:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.09);
+}
+
+.seizoensicoon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.seizoensstatus {
+    display: block;
+    font-size: 0.67rem;
+    font-weight: 850;
+    letter-spacing: 0.08em;
+    margin-bottom: 7px;
+}
+
+.seizoenskaart h3 {
+    margin: 0 0 8px;
+    font-size: 1.25rem;
+}
+
+.seizoenskaart p {
+    min-height: 66px;
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--gedempte-tekst);
+}
+
+.seizoensvoetregel {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+
+
+.lente {
+    background: #e6f4eb;
+    border-top: 4px solid #168253;
+}
+
+.lente .seizoensstatus {
+    color: #168253;
+}
+
+.zomer {
+    background: #fff3d9;
+    border-top: 4px solid #d99b32;
+}
+
+.zomer .seizoensstatus {
+    color: #a66a12;
+}
+
+.herfst {
+    background: #f5e9dc;
+    border-top: 4px solid #b76c37;
+}
+
+.herfst .seizoensstatus {
+    color: #a45b24;
+}
+
+.winter {
+    background: #e8eef5;
+    border-top: 4px solid #6685a5;
+}
+
+.winter .seizoensstatus {
+    color: #52718f;
+}
+
+.actief-seizoen {
+    box-shadow: 0 0 0 2px var(--groen);
+}
+
+
+
+
+.prestatie-indicatoren-raster {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.prestatie-indicator-kaart {
+    background: var(--kaart);
+    border: 1px solid var(--randkleur);
+    border-radius: 17px;
+    padding: 22px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.prestatie-indicator-kop {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.prestatie-indicator-label {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.prestatie-indicator-waarde {
+    font-size: 2rem;
+    font-weight: 850;
+    color: var(--groen);
+    margin: 16px 0 12px;
+}
+
+.prestatie-indicator-balk {
+    height: 11px;
+    background: #e8eee9;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.prestatie-indicator-voortgang {
+    height: 100%;
+    background: var(--groen);
+    border-radius: 999px;
+}
+
+.prestatie-indicator-beschrijving {
+    color: var(--gedempte-tekst);
+    font-size: 0.85rem;
+    margin: 12px 0 0;
+}
+
+.overzicht-opmerking {
+    color: var(--gedempte-tekst);
+    font-size: 0.8rem;
+    margin-top: 12px;
+}
+
+
+
+
+@media (max-width: 900px) {
+
+    .prestatie-indicatoren {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .seizoenenraster {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .prestatie-indicatoren-raster {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .raster-twee-kolommen,
+    .ronderaster {
+        grid-template-columns: 1fr;
+    }
+
+    .keuzeraster {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .koptekst {
+        flex-wrap: wrap;
+        padding: 16px;
+    }
+
+    .merknaam {
+        min-width: 0;
+    }
+
+    .navigatie {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .toepassing {
+        width: calc(100% - 18px);
+        margin: 9px auto;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .koptekst .knop {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+
+    .kop {
+        flex-direction: column;
+    }
+
+    .paneel {
+        padding: 16px;
+    }
+
+    .doelenraster {
+        grid-template-columns: 1fr;
+    }
+
+    .acties,
+    .samenvatting {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .acties .knop,
+    .samenvatting .knop {
+        width: 100%;
+    }
+
+    .voettekst {
+        flex-direction: column;
+    }
+
+    .formulierregel {
+        grid-template-columns: 65px 1fr;
+    }
+
+    .overzicht-intro {
+        padding: 20px;
+    }
+
+    .overzicht-kaart {
+        padding: 17px;
+    }
+
+    .seizoenenraster,
+    .prestatie-indicatoren-raster {
+        grid-template-columns: 1fr;
+    }
+
+    .overzicht-kop {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .keuze,
+    .keuzekaart,
+    .knop,
+    .seizoenskaart,
+    .overzicht-kaart {
+        transition: none;
+    }
+
+    .keuze:hover,
+    .keuzekaart:hover,
+    .knop:hover,
+    .seizoenskaart:hover,
+    .overzicht-kaart:hover {
+        transform: none;
+    }
+}
