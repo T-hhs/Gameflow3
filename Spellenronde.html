@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>GameFlow | Supermarktmanager Simulator</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="toepassing">
+
+    <!-- Navigatie -->
+    <header class="koptekst">
+
+        <a class="logo" href="#scenario" aria-label="Startscherm">☆</a>
+
+        <div class="merknaam">
+            <small>GAMEFLOW</small>
+            <h1>Supermarktmanager Simulator</h1>
+        </div>
+
+        <nav class="navigatie">
+            <a href="01-dashboard.html" class="knop primair">
+                Dashboard
+            </a>
+
+            <a href="02-Spellenronde.html" class="knop primair" aria-current="page">
+                Spellenronde
+            </a>
+        </nav>
+
+        <button class="knop omlijnd" id="instellingenKnop" aria-expanded="false">
+            ⚙ Instellingen
+        </button>
+
+    </header>
+
+    <!-- Instellingenpaneel -->
+    <div class="instellingen" id="instellingen" hidden>
+        <strong>Instellingen</strong>
+
+        <p class="gedempte-tekst">
+            Demonstratie-instelling; voorkeuren worden niet opgeslagen.
+        </p>
+
+        <label>
+            <input id="hoogContrast" type="checkbox">
+            Extra hoog contrast
+        </label>
+
+        <p>
+            <button class="knop secundair" id="sluitInstellingen">
+                Sluiten
+            </button>
+        </p>
+    </div>
+
+    <main>
+
+        <!-- Scherm 1: Scenario kiezen -->
+        <section class="scherm" data-scherm="scenario">
+
+            <div class="kop">
+                <div>
+                    <span class="bovenlabel">VOORBEREIDING</span>
+                    <h2>Kies een startscenario</h2>
+                    <p>Kies voor elk team een startsituatie.</p>
+                </div>
+
+                <span class="label">Prototype</span>
+            </div>
+
+            <div class="raster-twee-kolommen">
+
+                <section class="paneel">
+                    <h3>Teams en scenario's</h3>
+
+                    <p class="gedempte-tekst">
+                        Selecteer een scenario per team.
+                    </p>
+
+                    <div class="teams" id="teamKeuze">
+
+                        <label class="formulierregel">
+                            Team 1
+                            <select data-teamnummer="1">
+                                <option>Scenario 1</option>
+                                <option>Scenario 2</option>
+                                <option>Scenario 3</option>
+                                <option>Scenario 4</option>
+                                <option>Scenario 5</option>
+                                <option>Scenario 6</option>
+                            </select>
+                        </label>
+
+                        <label class="formulierregel">
+                            Team 2
+                            <select data-teamnummer="2">
+                                <option>Scenario 2</option>
+                                <option>Scenario 1</option>
+                                <option>Scenario 3</option>
+                                <option>Scenario 4</option>
+                                <option>Scenario 5</option>
+                                <option>Scenario 6</option>
+                            </select>
+                        </label>
+
+                        <label class="formulierregel">
+                            Team 3
+                            <select data-teamnummer="3">
+                                <option>Scenario 3</option>
+                                <option>Scenario 1</option>
+                                <option>Scenario 2</option>
+                                <option>Scenario 4</option>
+                                <option>Scenario 5</option>
+                                <option>Scenario 6</option>
+                            </select>
+                        </label>
+
+                        <label class="formulierregel">
+                            Team 4
+                            <select data-teamnummer="4">
+                                <option>Scenario 4</option>
+                                <option>Scenario 1</option>
+                                <option>Scenario 2</option>
+                                <option>Scenario 3</option>
+                                <option>Scenario 5</option>
+                                <option>Scenario 6</option>
+                            </select>
+                        </label>
+
+                    </div>
+                </section>
+
+                <section class="paneel">
+
+                    <h3>Scenario-overzicht</h3>
+
+                    <article class="scenario">
+                        <span class="nummer">01</span>
+                        <div>
+                            <h4>Scenario 1</h4>
+                            <p>Een stabiele supermarkt met ruimte om te groeien.</p>
+                        </div>
+                    </article>
+
+                    <article class="scenario">
+                        <span class="nummer">02</span>
+                        <div>
+                            <h4>Scenario 2</h4>
+                            <p>Een krap budget vraagt om scherpe keuzes.</p>
+                        </div>
+                    </article>
+
+                    <article class="scenario">
+                        <span class="nummer">03</span>
+                        <div>
+                            <h4>Scenario 3</h4>
+                            <p>Een drukke winkel met kansen voor verbetering.</p>
+                        </div>
+                    </article>
+
+                    <article class="scenario">
+                        <span class="nummer">04–06</span>
+                        <div>
+                            <h4>Scenario 4 t/m 6</h4>
+                            <p>Voorbeeldbeschrijvingen; vervang door de officiële spelinhoud.</p>
+                        </div>
+                    </article>
+
+                </section>
+
+            </div>
+
+            <div class="acties">
+                <span class="gedempte-tekst">
+                    Volgende stap: doelen en strategie.
+                </span>
+
+                <button class="knop primair" data-naar="doelen">
+                    Verder naar doelen →
+                </button>
+            </div>
+
+        </section>
+
+        <!-- Scherm 2: Doelen en strategie -->
+        <section class="scherm" data-scherm="doelen" hidden>
+
+            <div class="kop">
+                <div>
+                    <span class="bovenlabel">
+                        VOORBEREIDING · RONDE
+                        <b class="rondeNummer">1</b>
+                    </span>
+
+                    <h2>Doelen en strategie</h2>
+                    <p>Kies drie doelen voor jullie supermarkt.</p>
+                </div>
+
+                <span class="label rondeLabel">Ronde 1 / 4</span>
+            </div>
+
+            <div class="raster-twee-kolommen">
+
+                <section class="paneel">
+
+                    <h3>Welke doelen kies je?</h3>
+
+                    <p class="gedempte-tekst">
+                        Selecteer precies drie doelen.
+                    </p>
+
+                    <div class="doelenraster" id="doelenLijst">
+
+                        <label class="keuze">
+                            <input type="checkbox" value="Klanttevredenheid">
+                            <span>
+                                <strong>Klanttevredenheid</strong>
+                                <small>Verbeter de klantervaring.</small>
+                            </span>
+                        </label>
+
+                        <label class="keuze">
+                            <input type="checkbox" value="Winst">
+                            <span>
+                                <strong>Winst</strong>
+                                <small>Werk aan een gezond resultaat.</small>
+                            </span>
+                        </label>
+
+                        <label class="keuze">
+                            <input type="checkbox" value="Duurzaamheid">
+                            <span>
+                                <strong>Duurzaamheid</strong>
+                                <small>Beperk verspilling en impact.</small>
+                            </span>
+                        </label>
+
+                        <label class="keuze">
+                            <input type="checkbox" value="Personeel">
+                            <span>
+                                <strong>Personeel</strong>
+                                <small>Ondersteun inzet en tevredenheid.</small>
+                            </span>
+                        </label>
+
+                        <label class="keuze">
+                            <input type="checkbox" value="Voorraadbeheer">
+                            <span>
+                                <strong>Voorraadbeheer</strong>
+                                <small>Houd vraag en voorraad in balans.</small>
+                            </span>
+                        </label>
+
+                        <label class="keuze">
+                            <input type="checkbox" value="Omzetgroei">
+                            <span>
+                                <strong>Omzetgroei</strong>
+                                <small>Vergroot verkoopprestaties.</small>
+                            </span>
+                        </label>
+
+                    </div>
+
+                    <p class="gedempte-tekst" id="doelenMelding" role="status">
+                        0 / 3 doelen gekozen.
+                    </p>
+
+                </section>
+
+                <section class="paneel">
+
+                    <h3>Welke strategie kies je?</h3>
+
+                    <label for="strategie">Strategie</label>
+
+                    <select id="strategie">
+                        <option>Gebalanceerde groei</option>
+                        <option>Kosten beheersen</option>
+                        <option>Klant eerst</option>
+                    </select>
+
+                    <div class="beschrijving">
+                        <strong>Strategiebeschrijving</strong>
+                        <p id="strategieBeschrijving">
+                            Verdeel aandacht over de gekozen doelen en maak bewuste afwegingen.
+                        </p>
+                    </div>
+
+                    <div class="budget">
+                        <span class="gedempte-tekst">
+                            Beschikbaar budget (voorbeeld)
+                        </span>
+                        <strong>€ 10.000</strong>
+                    </div>
+
+                </section>
+
+            </div>
+
+            <div class="acties">
+                <button class="knop secundair" data-naar="scenario">
+                    ← Terug
+                </button>
+
+                <button class="knop primair" id="naarGebeurtenis">
+                    Verder naar gebeurtenis →
+                </button>
+            </div>
+
+        </section>
+
+        <!-- Scherm 3: Gebeurtenis -->
+        <section class="scherm" data-scherm="gebeurtenis" hidden>
+
+            <div class="kop">
+                <div>
+                    <span class="bovenlabel">
+                        GEBEURTENIS · RONDE
+                        <b class="rondeNummer">1</b>
+                    </span>
+
+                    <h2>Gebeurtenis</h2>
+                    <p>
+                        Bespreek samen welke aanpak bij deze gebeurtenis past.
+                    </p>
+                </div>
+
+                <span class="label rondeLabel">Ronde 1 / 4</span>
+            </div>
+
+            <section class="gebeurtenis">
+                <span class="bovenlabel">LET OP</span>
+
+                <h3 id="gebeurtenisTitel">
+                    Een onverwachte gebeurtenis beïnvloedt jullie doelen.
+                </h3>
+
+                <p id="gebeurtenisBeschrijving">
+                    Bespreek samen wat het beste plan van aanpak is en onderneem de juiste acties.
+                </p>
+            </section>
+
+            <div class="prestatie-indicatoren">
+
+                <article class="paneel">
+                    <span class="label">Prestatie-indicator 1</span>
+                    <h3>Klanttevredenheid</h3>
+                    <p class="gedempte-tekst">
+                        Voorbeeldindicator voor de klantervaring.
+                    </p>
+                    <div class="meter">
+                        <span style="width:72%"></span>
+                    </div>
+                    <strong>72 / 100</strong>
+                </article>
+
+                <article class="paneel">
+                    <span class="label">Prestatie-indicator 2</span>
+                    <h3>Financiële gezondheid</h3>
+                    <p class="gedempte-tekst">
+                        Voorbeeldindicator voor de financiën.
+                    </p>
+                    <div class="meter">
+                        <span style="width:64%"></span>
+                    </div>
+                    <strong>64 / 100</strong>
+                </article>
+
+                <article class="paneel">
+                    <span class="label">Prestatie-indicator 3</span>
+                    <h3>Voorraadbeheer</h3>
+                    <p class="gedempte-tekst">
+                        Voorbeeldindicator voor voorraad en verspilling.
+                    </p>
+                    <div class="meter">
+                        <span style="width:81%"></span>
+                    </div>
+                    <strong>81 / 100</strong>
+                </article>
+
+            </div>
+
+            <section class="paneel extra-afstand">
+
+                <h3>Welke actie kiezen jullie?</h3>
+
+                <p class="gedempte-tekst">
+                    De gevolgen zijn demonstratie-effecten, geen gevalideerde spelregels.
+                </p>
+
+                <div class="keuzeraster">
+
+                    <label class="keuzekaart">
+                        <input
+                            type="radio"
+                            name="gebeurtenisActie"
+                            value="Voorzichtig handelen"
+                            checked
+                        >
+                        <span>
+                            <strong>Voorzichtig handelen</strong>
+                            <br>
+                            <small>Beperk risico en bewaak het budget.</small>
+                        </span>
+                    </label>
+
+                    <label class="keuzekaart">
+                        <input
+                            type="radio"
+                            name="gebeurtenisActie"
+                            value="Investeren in verbetering"
+                        >
+                        <span>
+                            <strong>Investeren</strong>
+                            <br>
+                            <small>Accepteer kosten voor verbetering.</small>
+                        </span>
+                    </label>
+
+                    <label class="keuzekaart">
+                        <input
+                            type="radio"
+                            name="gebeurtenisActie"
+                            value="Teamoverleg"
+                        >
+                        <span>
+                            <strong>Teamoverleg</strong>
+                            <br>
+                            <small>Stem de aanpak gezamenlijk af.</small>
+                        </span>
+                    </label>
+
+                </div>
+
+            </section>
+
+            <div class="acties">
+                <button class="knop secundair" data-naar="doelen">
+                    ← Terug naar doelen
+                </button>
+
+                <button class="knop primair" data-naar="ronde">
+                    Naar spellenronde →
+                </button>
+            </div>
+
+        </section>
+
+        <!-- Scherm 4: Spellenronde -->
+        <section class="scherm" data-scherm="ronde" hidden>
+
+            <div class="kop">
+                <div>
+                    <span class="bovenlabel">GAMEFLOW · ACTUEEL OVERZICHT</span>
+
+                    <h2 id="rondeTitel">Ronde 1</h2>
+
+                    <p id="rondeOndertitel">
+                        Lente · Bekijk de tussenstand van de teams.
+                    </p>
+                </div>
+
+                <span class="label rondeLabel">Ronde 1 / 4</span>
+            </div>
+
+            <div class="ronderaster">
+
+                <section class="paneel">
+
+                    <div class="kop">
+                        <div>
+                            <span class="bovenlabel">TUSSENSTAND</span>
+                            <h3>Teamranglijst</h3>
+                        </div>
+
+                        <span class="gedempte-tekst">Voorbeeldgegevens</span>
+                    </div>
+
+                    <ol class="teamranglijst" id="teamRanglijst"></ol>
+
+                    <div class="teampositie">
+                        <span class="gedempte-tekst">Jullie positie</span>
+                        <br>
+                        <strong id="teamPositie">Team 1 staat op plek 1</strong>
+                    </div>
+
+                </section>
+
+                <div>
+
+                    <section class="scorekaart">
+                        <span class="bovenlabel">JULLIE SCORE</span>
+
+                        <div class="grote-score">
+                            <span id="score">100</span>
+                        </div>
+
+                        <p id="scoreOnderschrift">
+                            Team 1 · voorbeeldscore
+                        </p>
+                    </section>
+
+                    <section class="paneel aanwijzing extra-afstand">
+
+                        <h3>✦ Aanwijzing</h3>
+
+                        <p id="aanwijzing">
+                            Let op de gevolgen van jullie gekozen strategie voor de doelen.
+                        </p>
+
+                        <small class="gedempte-tekst">
+                            Voorbeeldhint — vervang door de officiële aanwijzing.
+                        </small>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+            <section class="paneel samenvatting">
+
+                <div>
+                    <span class="bovenlabel">JULLIE KEUZES</span>
+                    <h3>Rondeoverzicht</h3>
+
+                    <p id="rondeSamenvatting" class="gedempte-tekst">
+                        Jullie doelen en strategie verschijnen hier.
+                    </p>
+                </div>
+
+                <button class="knop secundair" data-naar="gebeurtenis">
+                    ← Terug naar gebeurtenis
+                </button>
+
+            </section>
+
+            <div class="acties">
+
+                <button class="knop secundair" data-naar="doelen">
+                    Doelen aanpassen
+                </button>
+
+                <button class="knop primair" id="rondAfronden">
+                    Ronde afronden →
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Scherm 5: Resultaten -->
+        <section class="scherm" data-scherm="resultaten" hidden>
+
+            <div class="kop">
+                <div>
+                    <span class="bovenlabel">GAMEFLOW · VOORTGANG</span>
+
+                    <h2 id="resultaatTitel">Resultaat ronde 1</h2>
+
+                    <p>
+                        Bekijk de demonstratieresultaten en reflecteer met je team.
+                    </p>
+                </div>
+
+                <span class="label rondeLabel">Ronde 1 / 4</span>
+            </div>
+
+            <section class="resultaat">
+
+                <span class="bovenlabel">TOTAALSCORE (DEMONSTRATIE)</span>
+
+                <div class="grote-score">
+                    <span id="resultaatScore">100</span>
+                    <small>punten</small>
+                </div>
+
+                <p id="resultaatMelding">
+                    De voorbeeldronde is afgerond.
+                </p>
+
+            </section>
+
+            <div class="raster-twee-kolommen extra-afstand">
+
+                <section class="paneel">
+
+                    <h3>Keuzes van jullie team</h3>
+
+                    <p>
+                        <strong>Doelen:</strong>
+                        <span id="resultaatDoelen">Nog niet gekozen</span>
+                    </p>
+
+                    <p>
+                        <strong>Strategie:</strong>
+                        <span id="resultaatStrategie">Gebalanceerde groei</span>
+                    </p>
+
+                    <p>
+                        <strong>Actie:</strong>
+                        <span id="resultaatActie">Voorzichtig handelen</span>
+                    </p>
+
+                </section>
+
+                <section class="paneel">
+
+                    <h3>Reflectie voor het team</h3>
+
+                    <p>
+                        Welke keuze werkte goed? Welke prestatie-indicator verdient aandacht?
+                    </p>
+
+                    <label for="teamReflectie">Teamnotitie</label>
+
+                    <textarea
+                        id="teamReflectie"
+                        rows="4"
+                        placeholder="Schrijf een korte reflectie..."
+                    ></textarea>
+
+                    <p class="gedempte-tekst">
+                        Notitie wordt niet opgeslagen.
+                    </p>
+
+                </section>
+
+            </div>
+
+            <div class="acties">
+
+                <button class="knop secundair" data-naar="ronde">
+                    ← Terug naar spellenronde
+                </button>
+
+                <button class="knop primair" id="volgendeRonde">
+                    Volgende ronde →
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Voettekst -->
+    <footer class="voettekst">
+        <span>GameFlow · Prototype gebruikersinterface</span>
+        <span>Voorbeeldgegevens — geen backend of officiële scoreberekening</span>
+    </footer>
+
+    <!-- Melding -->
+    <div class="melding" id="melding" role="status" aria-live="polite" hidden></div>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
