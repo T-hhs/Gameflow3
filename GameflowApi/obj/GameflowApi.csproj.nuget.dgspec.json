@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jeted\\OneDrive\\Gameflow3\\GameflowApi\\GameflowApi.csproj": {}
+    "c:\\Users\\Jeted\\OneDrive\\Gameflow3\\GameflowApi\\GameflowApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jeted\\OneDrive\\Gameflow3\\GameflowApi\\GameflowApi.csproj": {
+    "c:\\Users\\Jeted\\OneDrive\\Gameflow3\\GameflowApi\\GameflowApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jeted\\OneDrive\\Gameflow3\\GameflowApi\\GameflowApi.csproj",
+        "projectUniqueName": "c:\\Users\\Jeted\\OneDrive\\Gameflow3\\GameflowApi\\GameflowApi.csproj",
         "projectName": "GameflowApi",
-        "projectPath": "C:\\Users\\Jeted\\OneDrive\\Gameflow3\\GameflowApi\\GameflowApi.csproj",
+        "projectPath": "c:\\Users\\Jeted\\OneDrive\\Gameflow3\\GameflowApi\\GameflowApi.csproj",
         "packagesPath": "C:\\Users\\Jeted\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jeted\\OneDrive\\Gameflow3\\GameflowApi\\obj\\",
+        "outputPath": "c:\\Users\\Jeted\\OneDrive\\Gameflow3\\GameflowApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jeted\\AppData\\Roaming\\NuGet\\NuGet.Config"
