@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using backend.dtos;
 
-namespace GameflowApi.Endpoints;
+namespace backend.features.auth;
 
 public static class Register
 {
