@@ -1,0 +1,18 @@
+Werken aan een werkende programma.
+
+Frontend: wel ver aan gewerkt.
+
+Backend: veel moeten werkend
+
+Database: volgens mij af
+
+Gebruikmaken van libraries:
+React Router
+React 
+Stylewind
+
+Werken aan Excel voor berekeningen
+
+Een framework gebruiken voor ons project.
+
+Misschien net als Kahoot of Quizlet het spel maken.
